@@ -1,0 +1,38 @@
+.app__homeslider {
+  width: 100%;
+  border-bottom: 0.5px solid #d9dcdd;
+  display: flex;
+}
+
+.swiper-img {
+  width: 70%;
+  height: 100vh;
+  float:right;
+}
+
+.swiper-button-next{
+  background-color: red;
+}
+
+.homeslider__left {
+  float: left;
+  //display: flex;
+  //flex-direction: column;
+  .left--btn{
+    width:4rem;
+    height:4rem;
+    border: 0.5px solid #d9dcdd;
+  }
+  .left--bluebox{
+    width:9rem;
+    height:9rem;
+    background-color: #9ecfed;
+  }
+  //.left--nextbtn{
+  //
+  //}
+}
+
+.clearfix {
+  clear:both;
+}

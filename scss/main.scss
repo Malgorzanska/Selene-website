@@ -1,8 +1,6 @@
-.logo{
-  width: percentage(6/7);
-}
-
-
 @import "modules/all";
-@import "modules/colors";
+@import "modules/variables";
 @import "partials/header";
+@import "partials/reset";
+@import "partials/app";
+@import "partials/homeSliderSection";

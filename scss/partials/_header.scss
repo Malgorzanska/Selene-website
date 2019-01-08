@@ -1,5 +1,141 @@
-header {
-  .logo {
-    font-size: 30px;
+
+.app__header {
+  height: 9.8rem;
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+  border-bottom: 0.5px solid #d9dcdd;
+  .header__logo {
+    width: 38.4rem;
+    display: flex;
+    align-items: center;
+    .logo__box{
+      margin-top: 3.2rem;
+      margin-bottom: 3.2rem;
+
+    .logo__text {
+      position: relative;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+      margin-left: 5.76rem;
+      letter-spacing: 0.1rem;
+      z-index: 300;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 2.5px solid #d9dcdd;
+        position: absolute;
+        left: -1.6rem;
+        z-index: 1;
+
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 2.5px solid #9ecfed;
+        position: absolute;
+        left: -2.55rem;
+        z-index: 2;
+      }
+     }
+    }
   }
+  .header__nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+    .nav__menu {
+      display: flex;
+      align-items: center;
+      .menu__element {
+        padding-right: 5rem;
+        list-style-type: none;
+        text-decoration: none;
+        font-size: 1.1rem;
+        .menu__link {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            display: inline-block;
+            border-bottom: 4px solid #d9dcdd;
+            padding-bottom: 5px;
+          }
+        }
+
+      }
+    }
+    }
+  }
+
+//@media only screen and (max-width: 900px){
+//
+//
+//}
+.hamburger__icon {
+  margin: 0 4rem 0 0;
+  font-size: 2.6rem;
+  line-height: 9.8rem;
+  display: none;
 }
+#toggle {
+  display: none;
+}
+
+
+// for mobile
+@media only screen and (max-width: 519px) {
+  .header__nav {
+    width: 100%;
+    display: inline;
+    z-index: 1000;
+    position: relative;
+
+    .nav__hamburger {
+      .hamburger__icon{
+        display: block;
+        cursor: pointer;
+        margin: 0 2rem 0 0;
+      }
+    }
+      .nav__menu {
+        margin-top: 15.5rem;
+        .menu__element {
+          border-bottom: 1px solid black;
+          justify-content: center;
+          background-color: white;
+          width:100%;
+          .menu__link{
+            text-align: center;
+            font-size: 3rem;
+            padding-left: 12rem;
+          }
+        }
+      }
+    }
+    #mobile {
+      position:absolute;
+      min-width: 520px;
+      left: -27rem;
+      display: inline-block;
+      width: 100vw;
+      margin-left: 0;
+    }
+
+  }
+
+
+
+$bp-mobile-narrow                 : ( max:  479px );
+$bp-mobile                        : ( max:  519px );
+$bp-phablet                       : ( max:  767px );
+$bp-portrait                      : ( max:  1023px );
+$bp-tablet                        : ( max:  1199px );
+$bp-desktop                       : ( max: 1359px );
+$bp-desktop-wide                  : ( max: 1600px );
