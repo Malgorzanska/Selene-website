@@ -53,16 +53,21 @@
         .app__header .header__nav .nav__menu .menu__element .menu__link {
           text-decoration: none;
           color: black; }
-          .app__header .header__nav .nav__menu .menu__element .menu__link:hover {
-            display: inline-block;
-            border-bottom: 4px solid #d9dcdd;
-            padding-bottom: 5px; }
+
+@media only screen and (min-width: 900px) {
+  .menu__link {
+    text-decoration: none;
+    color: black; }
+    .menu__link:hover {
+      display: inline-block;
+      border-bottom: 4px solid #d9dcdd;
+      padding-bottom: 5px; } }
 
 .hamburger__icon {
-  margin: 0 4rem 0 0;
   font-size: 2.6rem;
   line-height: 9.8rem;
-  display: none; }
+  display: none;
+  padding-left: 7rem; }
 
 #toggle {
   display: none; }
@@ -72,18 +77,22 @@
     width: 100%;
     display: inline;
     z-index: 1000;
-    position: relative; }
-    .header__nav .nav__hamburger .hamburger__icon {
-      display: block;
-      cursor: pointer;
-      margin: 0 2rem 0 0; }
+    position: relative;
+    margin-right: 0 !important; }
+    .header__nav .nav__hamburger {
+      margin-right: 15rem; }
+      .header__nav .nav__hamburger .hamburger__icon {
+        display: block;
+        cursor: pointer; }
     .header__nav .nav__menu {
-      margin-top: 15.5rem; }
+      margin-top: 27rem;
+      display: none; }
       .header__nav .nav__menu .menu__element {
         border-bottom: 1px solid black;
         justify-content: center;
         background-color: white;
-        width: 100%; }
+        width: 100%;
+        padding: 2rem; }
         .header__nav .nav__menu .menu__element .menu__link {
           text-align: center;
           font-size: 3rem;
@@ -91,10 +100,14 @@
   #mobile {
     position: absolute;
     min-width: 520px;
-    left: -27rem;
+    left: -32rem;
     display: inline-block;
     width: 100vw;
     margin-left: 0; } }
+
+@media only screen and (max-width: 767px) and (min-width: 519px) {
+  .app__header {
+    padding-right: 15%; } }
 
 * {
   margin: 0;
@@ -111,27 +124,215 @@ html {
 
 .app__homeslider {
   width: 100%;
+  height: 100vh;
   border-bottom: 0.5px solid #d9dcdd;
   display: flex; }
 
-.swiper-img {
-  width: 70%;
-  height: 100vh;
-  float: right; }
-
-.swiper-button-next {
-  background-color: red; }
+.swiper-container {
+  width: 100%;
+  margin-right: 0 !important;
+  border: 1px solid black; }
+  .swiper-container .swiper-wrapper {
+    width: 70%;
+    color: black;
+    font-size: 3rem; }
+    .swiper-container .swiper-wrapper .swiper-slide {
+      position: relative; }
+      .swiper-container .swiper-wrapper .swiper-slide .swiper-img {
+        width: 87%;
+        height: 100vh;
+        float: right; }
+      .swiper-container .swiper-wrapper .swiper-slide .swiper-wraper-text {
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 5.5rem;
+        font-weight: bold;
+        line-height: 8.5rem;
+        padding-left: 4.5rem;
+        letter-spacing: 4px; }
+        .swiper-container .swiper-wrapper .swiper-slide .swiper-wraper-text:after {
+          content: "";
+          display: block;
+          width: 50rem;
+          height: 1rem;
+          background-color: #9ecfed;
+          z-index: 100;
+          margin-top: 2rem; }
 
 .homeslider__left {
-  float: left; }
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 8.5rem;
+  background-color: white;
+  z-index: 1000; }
   .homeslider__left .left--btn {
     width: 4rem;
     height: 4rem;
     border: 0.5px solid #d9dcdd; }
   .homeslider__left .left--bluebox {
-    width: 9rem;
-    height: 9rem;
-    background-color: #9ecfed; }
+    width: 13rem;
+    height: 13rem;
+    background-color: #9ecfed;
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bolder; }
+    .homeslider__left .left--bluebox span {
+      display: inline-block;
+      padding-top: 2.5rem; }
+  .homeslider__left .left--line {
+    border: 0.5px solid #d9dcdd;
+    height: 32vh; }
 
 .clearfix {
   clear: both; }
+
+.swiper-button-prev {
+  left: 135px !important;
+  top: 210px !important;
+  background-image: url("../images/arrow_left.png");
+  width: 128px;
+  height: 128px; }
+
+.app__aboutus {
+  height: 70vh;
+  width: 100%;
+  display: flex; }
+  .app__aboutus .aboutus__text {
+    width: 55%;
+    height: 100%;
+    padding: 11rem 7rem 10rem 15rem;
+    color: #a2a6ad; }
+    .app__aboutus .aboutus__text .text__title {
+      font-size: 4rem;
+      padding-bottom: 4rem; }
+    .app__aboutus .aboutus__text .text__description {
+      font-size: 1rem;
+      line-height: 3rem;
+      text-align: justify; }
+  .app__aboutus .aboutus__img {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    .app__aboutus .aboutus__img .aboutus__building {
+      background-image: url("../images/5.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 40rem;
+      height: 25rem;
+      border-bottom: 10px solid #9ecfed;
+      border-top: 10px solid #9ecfed;
+      border-left: 10px solid #9ecfed;
+      position: relative;
+      display: flex;
+      align-items: center; }
+      .app__aboutus .aboutus__img .aboutus__building .img__title {
+        font-size: 6rem;
+        position: absolute;
+        left: -12rem;
+        font-weight: bold; }
+        .app__aboutus .aboutus__img .aboutus__building .img__title .smaller__text {
+          font-size: 5rem; }
+
+@media only screen and (max-width: 519px) {
+  .app__aboutus {
+    flex-wrap: wrap; }
+    .app__aboutus .aboutus__text {
+      width: 100%; }
+      .app__aboutus .aboutus__text .text__description {
+        font-size: 1.4rem; }
+    .app__aboutus .aboutus__img {
+      width: 100%; }
+      .app__aboutus .aboutus__img .aboutus__building {
+        width: 100%; }
+        .app__aboutus .aboutus__img .aboutus__building .img__title {
+          font-size: 4rem;
+          position: absolute;
+          left: 10rem; }
+          .app__aboutus .aboutus__img .aboutus__building .img__title .smaller__text {
+            font-size: 3rem; } }
+
+.app__inspirations {
+  width: 100%;
+  height: 80vh;
+  display: flex; }
+  .app__inspirations .insp1 {
+    background-image: url("../images/insp1.png"); }
+  .app__inspirations .insp2 {
+    background-image: url("../images/insp2.png"); }
+  .app__inspirations .insp3 {
+    background-image: url("../images/insp3.png"); }
+  .app__inspirations .insp4 {
+    background-image: url("../images/insp4.png"); }
+  .app__inspirations .inspirations__foto {
+    width: 25%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .app__inspirations .inspirations__foto span {
+      color: white;
+      font-size: 4rem;
+      font-weight: bold; }
+    .app__inspirations .inspirations__foto:hover:after {
+      content: "";
+      display: block;
+      width: 20%;
+      height: 70%;
+      border: 1rem solid #9ecfed;
+      position: absolute;
+      z-index: 2; }
+
+.app__howwework {
+  width: 100%;
+  height: 70vh;
+  border: 1px solid black;
+  background-image: url("../images/howwework.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center; }
+  .app__howwework p {
+    display: inline-block;
+    height: 25%;
+    width: 80%;
+    padding: 4%;
+    color: #9ecfed;
+    font-weight: bold; }
+  .app__howwework .values {
+    display: flex;
+    align-items: center;
+    height: 45%;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5rem; }
+    .app__howwework .values .value {
+      width: 33.3%;
+      z-index: 20;
+      position: relative; }
+      .app__howwework .values .value:after {
+        content: "1";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        font-weight: bold;
+        color: lightpink;
+        font-size: 15rem;
+        top: -8rem;
+        left: 12rem; }
+  .app__howwework .latest__projects {
+    height: 30%;
+    background-color: white;
+    color: #9ecfed;
+    width: 80%;
+    padding-top: 4%;
+    font-weight: bold; }

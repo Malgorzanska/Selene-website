@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Selena - the best architecture studio</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
 </head>
 <body>
 
     <div class="app">
+
+
         <!-- Header section -->
         <header class="app__header">
             <div class="header__logo">
@@ -39,36 +41,40 @@
             </nav>
         </header>
 
+
+        <!-- Home slider section -->
         <section class="app__homeslider">
-
-            <div class="homeslider__left">
-
-                <div class="left--prevbtn" class="left--btn"></div>
-                <div class="left--bluebox"></div>
-                <div class="left--nextbtn" class="left--btn"></div>
-
-
-            </div>
-
 
             <!-- Home slider section -->
             <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
+                <div class="homeslider__left">
+
+                    <hr class="left--line"/>
+                    <div class="left--btn"></div>
+                    <div class="left--bluebox"><span>01</span></div>
+                    <div class="left--btn"></div>
+                    <hr class="left--line"/>
+
+                </div>
+
+
+
+
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"> Slide 1</div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/2.jpg">Slide 2</div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/3.jpg">Slide 3</div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/4.jpg">Slide 3</div>
-                    ...
+                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Lorem ipsum <br/>dolor amet enim</span></div>
+                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Curabitur et <br/>ligula amet enim</span></div>
+                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Phasellus ligula<br/>in, dolor</span></div>
+                    <div class="swiper-slide"><img class="swiper-img" src="images/main.png"><span class="swiper-wraper-text">Architecture<br/>aims at eternity</span></div>
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination">01 02 03 04</div>
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev" id="prev"></div>
+                <div class="swiper-button-next" id="next"></div>
 
                 <div class="clearfix"></div>
 
@@ -78,6 +84,61 @@
 
 
     </section>
+
+
+        <!-- About us section -->
+        <section class="app__aboutus">
+
+            <article class="aboutus__text">
+
+                <h2 class="text__title">Curabitur volutpat</h2>
+                <p class="text__description">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                    Maecenas malesuada elit lectus felis, malesuada ultricies.Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac,
+                    laoreet enim. </p>
+
+            </article>
+
+
+
+            <article class="aboutus__img">
+                <div class="aboutus__building">
+                    <p class="img__title">We create <br/><span class="smaller__text">cool ideas.</span></p>
+                </div>
+            </article>
+
+
+        </section>
+
+
+        <!-- Inspiration section -->
+        <section class="app__inspirations">
+            <div class="inspirations__foto insp1"><span class="inspiration__foto-text">Idea.</span></div>
+            <div class="inspirations__foto insp2"><span class="inspiration__foto-text">Concept.</span></div>
+            <div class="inspirations__foto insp3"><span class="inspiration__foto-text">Design.</span></div>
+            <div class="inspirations__foto insp4"><span class="inspiration__foto-text">Develop.</span></div>
+        </section>
+
+
+        <!-- How do we work section -->
+
+        <section class="app__howwework">
+
+            <p>HOW WE WORK</p>
+
+            <article class="values">
+
+                <div class="value">Dexterity</div>
+                <div class="value">Team</div>
+                <div class="value">Partnership</div>
+
+            </article>
+
+            <div class="latest__projects">LATEST PROJECTS</div>
+
+
+        </section>
+
+
 
 
 

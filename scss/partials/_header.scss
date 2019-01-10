@@ -62,27 +62,29 @@
         .menu__link {
           text-decoration: none;
           color: black;
-          &:hover {
-            display: inline-block;
-            border-bottom: 4px solid #d9dcdd;
-            padding-bottom: 5px;
-          }
         }
-
       }
     }
     }
   }
-
-//@media only screen and (max-width: 900px){
-//
-//
-//}
+//hover effect
+@media only screen and (min-width: 900px) {
+  .menu__link {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      display: inline-block;
+      border-bottom: 4px solid #d9dcdd;
+      padding-bottom: 5px;
+    }
+  }
+}
 .hamburger__icon {
-  margin: 0 4rem 0 0;
+//  margin: 0 4rem 0 0;
   font-size: 2.6rem;
   line-height: 9.8rem;
   display: none;
+  padding-left: 7rem;
 }
 #toggle {
   display: none;
@@ -96,21 +98,25 @@
     display: inline;
     z-index: 1000;
     position: relative;
+    margin-right: 0 !important;
 
     .nav__hamburger {
+      margin-right: 15rem;
       .hamburger__icon{
         display: block;
         cursor: pointer;
-        margin: 0 2rem 0 0;
+      //  padding-left: 7rem;
       }
     }
       .nav__menu {
-        margin-top: 15.5rem;
+        margin-top: 27rem;
+        display:none;
         .menu__element {
           border-bottom: 1px solid black;
           justify-content: center;
           background-color: white;
           width:100%;
+          padding: 2rem;
           .menu__link{
             text-align: center;
             font-size: 3rem;
@@ -122,13 +128,19 @@
     #mobile {
       position:absolute;
       min-width: 520px;
-      left: -27rem;
+      left: -32rem;
       display: inline-block;
       width: 100vw;
       margin-left: 0;
     }
 
   }
+
+@media only screen and (max-width: 767px) and (min-width: 519px){
+  .app__header{
+    padding-right: 15%;
+  }
+}
 
 
 

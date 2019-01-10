@@ -1,0 +1,36 @@
+.app__inspirations{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+
+  @each	$number	in 1,2,3,4 {
+    .insp#{$number}	{
+      background-image:	url('../images/insp#{$number}.png');
+    }
+  }
+
+  .inspirations__foto{
+    width: 25%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     span{
+      color: white;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    &:hover{
+      &:after {
+        content: "";
+        display: block;
+        width: 20%;
+        height: 70%;
+        border: 1rem solid #9ecfed;
+        position: absolute;
+        z-index: 2;
+      }
+    }
+
+  }
+}

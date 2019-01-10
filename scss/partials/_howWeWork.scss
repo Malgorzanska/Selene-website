@@ -1,0 +1,56 @@
+.app__howwework{
+  width: 100%;
+  height: 70vh;
+  border: 1px solid black;
+  background-image: url("../images/howwework.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  p{
+    display: inline-block;
+    height: 25%;
+    width: 80%;
+    padding: 4%;
+    color: #9ecfed;
+    font-weight: bold;
+  }
+
+
+  .values{
+    display: flex;
+    align-items: center;
+    height: 45%;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5rem;
+    .value{
+      width: 33.3%;
+      z-index: 20;
+      position: relative;
+      &:after {
+        content: "1";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        font-weight: bold;
+        color: lightpink;
+        font-size: 15rem;
+        top: -8rem;
+        left: 12rem;
+      }
+    }
+  }
+
+  .latest__projects{
+    height: 30%;
+    background-color: white;
+    color: #9ecfed;
+    width: 80%;
+    padding-top: 4%;
+    font-weight: bold;
+  }
+}
