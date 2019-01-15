@@ -10,8 +10,8 @@
   text-align: center;
 
   p{
-    display: inline-block;
-    height: 25%;
+   // display: inline-block;
+ //   height: 25%;
     width: 80%;
     padding: 4%;
     color: #9ecfed;
@@ -27,16 +27,16 @@
     }
     &:before{
       left: 35%;
-      bottom: 45%;
+      bottom: 50%;
     }
     &:after {
       left: 56%;
-      bottom: 45%;
+      bottom: 50%;
     }
   }
 
 
-  .values{
+  .values {
     display: flex;
     align-items: center;
     height: 45%;
@@ -44,30 +44,49 @@
     text-align: center;
     font-weight: bold;
     font-size: 3.5rem;
-    .value{
+    .value {
       width: 33.3%;
       z-index: 2000;
       position: relative;
-      &:after {
-        content: "1";
-        display: block;
-        position: absolute;
-        z-index: 20;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 16rem;
-        bottom: -150%;
-        left: 30%;
+        &:after {
+          content: "2";
+          display: block;
+          position: absolute;
+          z-index: -2;
+          font-weight: bold;
+          color: rgba(255, 255, 1, 0.95);
+          font-size: 20rem;
+          bottom: -200%;
+          left: 30%;
+      }
+
+
+        }
       }
     }
-  }
 
-  .latest__projects{
+  .latest__projects {
     height: 30%;
     background-color: white;
     color: #9ecfed;
     width: 80%;
     padding-top: 4%;
     font-weight: bold;
+    position: relative;
+    &:after, &:before {
+      content: "";
+      display: block;
+      width: 9rem;
+      height: 0.1rem;
+      background-color: #9ecfed;
+      position: absolute;
+    }
+    &:before {
+      left: 35%;
+      bottom: 50%;
+    }
+    &:after {
+      left: 56%;
+      bottom: 50%;
+    }
   }
-}

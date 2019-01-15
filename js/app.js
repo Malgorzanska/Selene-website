@@ -8,6 +8,8 @@ $(document).ready(function () {
     var swiper = new Swiper('.swiper-container', {
         pagination: {
             el: '.swiper-pagination',
+            dynamicMainBullets: 1,
+           // type: '',
         },
     });
 
@@ -16,6 +18,11 @@ $(document).ready(function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+
+    var mySwiper = new Swiper('.swiper-slide', {
+        speed: 400,
+        spaceBetween: 200
     });
 
     // var swiper = new Swiper('.swiper-container', {
