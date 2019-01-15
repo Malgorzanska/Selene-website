@@ -16,6 +16,23 @@
     padding: 4%;
     color: #9ecfed;
     font-weight: bold;
+    position: relative;
+    &:after, &:before {
+      content: "";
+      display: block;
+      width: 9rem;
+      height: 0.1rem;
+      background-color: #9ecfed;
+      position: absolute;
+    }
+    &:before{
+      left: 35%;
+      bottom: 45%;
+    }
+    &:after {
+      left: 56%;
+      bottom: 45%;
+    }
   }
 
 
@@ -29,18 +46,18 @@
     font-size: 3.5rem;
     .value{
       width: 33.3%;
-      z-index: 20;
+      z-index: 2000;
       position: relative;
       &:after {
         content: "1";
         display: block;
         position: absolute;
-        z-index: 2;
+        z-index: 20;
         font-weight: bold;
-        color: lightpink;
-        font-size: 15rem;
-        top: -8rem;
-        left: 12rem;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 16rem;
+        bottom: -150%;
+        left: 30%;
       }
     }
   }
