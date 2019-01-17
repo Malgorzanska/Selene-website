@@ -17,26 +17,24 @@
         <header class="app__header">
             <div class="header__logo">
                 <div class="logo__box">
-                    <div class="logo__text" ><p>Selene.</p></div>
+                    <div class="logo__text"><p class="logo__zindex">Selene.</p></div>
                 </div>
             </div>
 
             <nav class="header__nav">
-                <div class="nav__hamburger">
-                    <label class="hamburger__icon" for="toggle">&#9776;</label>
-                    <input type="checkbox" id="toggle">
-                </div>
 
-                    <ul class="nav__menu" id="mobile">
-                        <li class="menu__element">
-                            <a href="#" class="menu__link">home</a>
-                        </li>
-                        <li class="menu__element"><a href="#" class="menu__link">about&nbsp;us</a></li>
-                        <li class="menu__element"><a href="#" class="menu__link">projects</a></li>
-                        <li class="menu__element"><a href="#" class="menu__link">clients</a></li>
-                        <li class="menu__element"><a href="#" class="menu__link">contact</a></li>
-                        <li class="menu__element"><a href="#" class="menu__link">blog</a></li>
-                    </ul>
+                <label class="hamburger__icon" for="toggle">&#9776;</label>
+                <input type="checkbox" id="toggle">
+
+                <div class="nav__menu">
+
+                    <a href="#" class="menu__link">home</a>
+                    <a href="#" class="menu__link">about&nbsp;us</a>
+                    <a href="#" class="menu__link">projects</a>
+                    <a href="#" class="menu__link">clients</a>
+                    <a href="#" class="menu__link">contact</a>
+                    <a href="#" class="menu__link">blog</a>
+                </div>
 
             </nav>
         </header>
@@ -45,7 +43,6 @@
         <!-- Home slider section -->
         <section class="app__homeslider">
 
-            <!-- Home slider section -->
             <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
@@ -67,8 +64,8 @@
                     <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Phasellus ligula<br/>in, dolor</span></div>
                     <div class="swiper-slide"><img class="swiper-img" src="images/main.png"><span class="swiper-wraper-text">Architecture<br/>aims at eternity</span></div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination">01 02 03 04</div>
+                <!--&lt;!&ndash; If we need pagination &ndash;&gt;-->
+                <!--<div class="swiper-pagination">01 02 03 04</div>-->
 
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev" id="prev"></div>
@@ -125,7 +122,7 @@
 
             <article class="values">
 
-                <div class="value" id="one">Dexterity</div>
+                <div class="value one" >Dexterity</div>
                 <div class="value two">Team</div>
                 <div class="value three">Partnership</div>
 

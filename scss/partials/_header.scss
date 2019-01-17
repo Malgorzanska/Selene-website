@@ -1,4 +1,91 @@
 
+//hover effect
+@media only screen and (min-width: 900px) {
+  .menu__link {
+    text-decoration: none;
+    color: black;
+    padding-right: 4rem !important;
+    &:hover {
+      border-bottom: 4px solid #d9dcdd;
+      padding-bottom: 5px;
+      // text-decoration: underline solid #d9dcdd !important;
+    }
+  }
+}
+.hamburger__icon {
+  font-size: 2.6rem;
+  line-height: 9.8rem;
+  display: none;
+  padding-left: 120%;
+  width: 2.6rem;
+}
+#toggle {
+  display: none;
+}
+
+
+//mobile
+@media only screen and (max-width: 519px) {
+
+  .app__header{
+    width: 100%;
+  }
+  .hamburger__icon{
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu{
+    display: none !important;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: -0.1rem;
+    top: 9.8rem;
+    z-index: 20000 !important;
+    background-color: white;
+    margin-right: 5rem;
+  }
+  .menu__link{
+    display: block !important;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+    font-size: 3rem !important;
+    padding: 1.5rem 5rem;
+    width: 100%;
+  }
+  #toggle:checked + .nav__menu {
+    display: block !important;
+  }
+  .app__header{
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 519px) and (max-width: 767px){
+  .app__header{
+    width: 100% !important;
+    margin-right: 2rem !important;
+  }
+  .header__nav{
+    width: 70% !important;
+      .menu__link:first-child{
+        padding-left: 2rem;
+      }
+      .menu__link{
+        width: 16.6%;
+      }
+    }
+
+  }
+
+
+@mixin pseudoelement($border){
+  content: "";
+  display: block;
+  position: absolute;
+  border: $border;
+}
+
 .app__header {
   height: 9.8rem;
   width: 100%;
@@ -12,138 +99,51 @@
     .logo__box{
       margin-top: 3.2rem;
       margin-bottom: 3.2rem;
-
-    .logo__text {
-      position: relative;
-      font-size: 1.7rem;
-      display: flex;
-      align-items: center;
-      margin-left: 5.76rem;
-      p{
-        z-index: 10;
+      .logo__text {
+        position: relative;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        margin-left: 5.76rem;
+        .logo__zindex{
+          z-index: 10;
+        }
+        &:before {
+          @include pseudoelement(3px solid #d9dcdd);
+          width: 3.5rem;
+          height: 3.5rem;
+          left: -2rem;
+        }
+        &:after {
+          @include pseudoelement(3px solid #9ecfed);
+          width: 1.5rem;
+          height: 1.5rem;
+          left: -2.95rem;
+          z-index: 2;
+        }
       }
-
-      &:before {
-        content: "";
-        display: block;
-        width: 3.5rem;
-        height: 3.5rem;
-        border: 3px solid #d9dcdd;
-        position: absolute;
-        left: -2rem;
-
-      }
-      &:after {
-        content: "";
-        display: block;
-        width: 1.5rem;
-        height: 1.5rem;
-        border: 3px solid #9ecfed;
-        position: absolute;
-        left: -2.95rem;
-        z-index: 2;
-      }
-     }
     }
   }
+
   .header__nav {
-    width: 40%;
     font-weight: 700;
+    width: 40%;
     display: flex;
     align-items: center;
-    margin-right: 20%;
+    margin-right: 30%;
     .nav__menu {
       display: flex;
       align-items: center;
-      .menu__element {
-        padding-right: 5rem;
-        list-style-type: none;
+      margin-right: 5rem;
+      .menu__link {
         text-decoration: none;
+        color: black;
         font-size: 1.1rem;
-        .menu__link {
-          text-decoration: none;
-          color: black;
-        }
+        padding-right: 3rem !important;
       }
     }
-    }
-  }
-//hover effect
-@media only screen and (min-width: 900px) {
-  .menu__link {
-    text-decoration: none;
-    color: black;
-    &:hover {
-      display: inline-block;
-      border-bottom: 4px solid #d9dcdd;
-      padding-bottom: 5px;
-    }
   }
 }
-.hamburger__icon {
-//  margin: 0 4rem 0 0;
-  font-size: 2.6rem;
-  line-height: 9.8rem;
-  display: none;
-  padding-left: 7rem;
-}
-#toggle {
-  display: none;
-}
-
-
-// for mobile
-@media only screen and (max-width: 519px) {
-  .header__nav {
-    width: 100%;
-    display: inline;
-    z-index: 1000;
-    position: relative;
-    margin-right: 0 !important;
-
-    .nav__hamburger {
-      margin-right: 15rem;
-      .hamburger__icon{
-        display: block;
-        cursor: pointer;
-      //  padding-left: 7rem;
-      }
-    }
-      .nav__menu {
-        margin-top: 27rem;
-        display:none;
-        .menu__element {
-          border-bottom: 1px solid black;
-          justify-content: center;
-          background-color: white;
-          width:100%;
-          padding: 2rem;
-          .menu__link{
-            text-align: center;
-            font-size: 3rem;
-            padding-left: 12rem;
-          }
-        }
-      }
-    }
-    #mobile {
-      position:absolute;
-      min-width: 520px;
-      left: -32rem;
-      display: inline-block;
-      width: 100vw;
-      margin-left: 0;
-    }
-
-  }
-
-@media only screen and (max-width: 767px) and (min-width: 519px){
-  .app__header{
-    padding-right: 15%;
-  }
-}
-
-
 
 $bp-mobile-narrow                 : ( max:  479px );
 $bp-mobile                        : ( max:  519px );

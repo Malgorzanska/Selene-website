@@ -35,6 +35,18 @@
     }
   }
 
+  @mixin pseudonumber($content){
+    content: $content;
+    display: block;
+    position: absolute;
+    z-index: -2;
+    font-weight: 700;
+    color: lightpink;
+    font-size: 20rem;
+    bottom: -200%;
+    left: 30%;
+  }
+
 
   .values {
     display: flex;
@@ -48,31 +60,34 @@
       width: 33.3%;
       z-index: 2000;
       position: relative;
+    }
+      .one{
         &:after {
-          content: "2";
-          display: block;
-          position: absolute;
-          z-index: -2;
-          font-weight: bold;
-          color: rgba(255, 255, 1, 0.95);
-          font-size: 20rem;
-          bottom: -200%;
-          left: 30%;
-      }
-
-
+          @include pseudonumber("1");
         }
       }
-    }
+
+      .two {
+        &:after {
+          @include pseudonumber("2");
+        }
+      }
+      .three{
+        &:after {
+          @include pseudonumber("3");
+          bottom: -180%;
+        }
+      }
+        }
+      }
+
 
   .latest__projects {
-    height: 30%;
     background-color: white;
     color: #9ecfed;
     width: 80%;
-    padding-top: 4%;
     font-weight: bold;
-    position: relative;
+    padding: 5rem;
     &:after, &:before {
       content: "";
       display: block;
