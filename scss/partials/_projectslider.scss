@@ -1,10 +1,70 @@
-.app__projectslider{
-  height: 90vh;
+.app__projectslider {
   width: 100%;
-  background-color: #EE5757;
-  p{
-    font-size: 50px;
-    color: white;
+  height: 100vh;
+  display: flex;
+  .demo {
+    margin-bottom: 60px;
+    width: 50%;
+    height: 100%;
+    .item {
+      margin-bottom: 60px;
+      .clearfix {
+        max-width: 100%;
+        .lSSlideWrapper {
+          height: 40%;
+          #image-gallery {
+            list-style: none outside none;
+            padding-left: 0;
+            margin: 0;
+            height: 30%;
+            li {
+              height: 100%;
+              img {
+                max-width: 100%;
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+  }
+  #two {
+    width: 50%;
+    article {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20% 16%;
+      h2 {
+        font-size: 3rem;
+        font-weight: 900;
+      }
+        p {
+          font-size: 1rem;
+          color: #a2a6ad;
+          padding: 6% 0;
+          line-height: 3rem;
+          text-align: justify;
+        }
+        div {
+          width:23%;
+          font-size: 1rem;
+          color: #a2a6ad;
+          text-align: justify;
+          padding: 3% ;
+          border: 0.5px solid #a2a6ad;
+        }
+      }
+    }
   }
 
+
+.lSPager {
+  li {
+    height: 143.49px;
+  }
 }
+
