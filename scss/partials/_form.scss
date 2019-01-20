@@ -1,5 +1,101 @@
-.app__form{
+.app__form {
   width: 100%;
   height: 100vh;
-  background-color: #00cc99;
-}
+
+
+  .contact {
+    width: 81%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    position:relative;
+
+
+    &:after {
+      content: "";
+      display: block;
+      height: 90%;
+      width: 90%;
+      border: 12px solid #97d1eb;
+      position: absolute;
+      top: 5%;
+      left: 7%;
+      z-index: 3;
+    }
+
+    .form__container{
+      width: 60%;
+      height: 100%;
+      position: relative;
+      z-index: 20000;
+      padding: 9% 5% 0 13%;
+
+      ul{
+          padding-bottom: 15%;
+        .nav-item{
+          display: inline-block;
+          padding-right: 5%;
+          color: #d9dcdd;
+          letter-spacing: 1px;
+          font-weight: 600;
+          &:hover{
+            color:#97d1eb;
+            text-underline: #97d1eb;
+            cursor: pointer;
+          }
+        }
+      }
+
+      form{
+
+        input, textarea {
+          padding-bottom: 1.5%;
+          border: none;
+          border-bottom: 0.5px solid #f2f2f2 !important;
+          width: 100%;
+          margin-bottom: 5%;
+          resize: none;
+        }
+        input[type="submit"]{
+          border: 1px solid #f2f2f2;
+          background-color: white;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #bcc0cd;;
+          width: 25%;
+          padding: 2%;
+          margin-left:36%;
+        }
+
+        }
+        #name, #phone, #mail{
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: #bcc0cd;
+          &::placeholder{
+            font-size: 2.5rem;
+            color: #bcc0cd;
+          }
+          #mail{
+            margin-bottom: 0;
+          }
+        }
+        textarea{
+          height: 10rem;
+          font-size: 1rem;
+          color: #bcc0cd;
+          &::placeholder{
+            color: #bcc0cd;
+          }
+        }
+      }
+
+    }
+    .form__img {
+      width: 40%;
+      z-index: -2;
+      position: relative;
+      background-image: url("../images/contactus.png");
+      background-size: cover;
+    }
+  }

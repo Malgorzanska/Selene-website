@@ -76,7 +76,7 @@
 
 /* Pager */
 .lSSlideOuter .lSPager.lSpg {
-    margin: 10px 0 0;
+    margin: 10px 500px 0;
     padding: 0;
     text-align: center;
 }
@@ -86,8 +86,7 @@
     padding: 0 5px;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
-    background-color: #222222;
-    border-radius: 30px;
+    border-radius: 90px;
     display: inline-block;
     height: 8px;
     overflow: hidden;
@@ -135,7 +134,7 @@
     transition: border-radius 0.12s linear 0s 0.35s linear 0s;
 }
 .lSSlideOuter .lSPager.lSGallery li.active, .lSSlideOuter .lSPager.lSGallery li:hover {
-    border-radius: 5px;
+    border: 8px solid #9ecfed;
 }
 .lSSlideOuter .lSPager.lSGallery img {
     display: block;
@@ -168,10 +167,12 @@
 }
 .lSAction > a:hover {
     opacity: 1;
+    color: #9ecfed;
 }
 .lSAction > .lSPrev {
     background-position: 0 0;
     left: 10px;
+    color: #9ecfed;
 }
 .lSAction > .lSNext {
     background-position: -32px 0;
@@ -193,7 +194,7 @@
     position: relative;
 }
 .lSSlideOuter.vertical.noPager {
-    padding-right: 0px !important;
+    padding-right: 0 !important;
 }
 .lSSlideOuter.vertical .lSGallery {
     position: absolute !important;
