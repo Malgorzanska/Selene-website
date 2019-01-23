@@ -3,6 +3,7 @@
   height: 70vh;
   border: 1px solid black;
   background-image: url("../images/howwework.png");
+//  background-blend-mode: difference;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -10,7 +11,7 @@
   text-align: center;
 
   p{
-   // display: inline-block;
+  //  display: inline-block;
  //   height: 25%;
     width: 80%;
     padding: 4%;
@@ -45,6 +46,7 @@
     font-size: 20rem;
     bottom: -200%;
     left: 30%;
+    //dac tutaj text shadow!
   }
 
 

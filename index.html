@@ -19,11 +19,9 @@
 </head>
 <body>
 
-    <div class="app">
-
-
+    <div class="container">
         <!-- Header section -->
-        <header class="app__header">
+        <header class="header">
             <div class="header__logo">
                 <div class="logo__box">
                     <div class="logo__text"><p class="logo__zindex">Selene.</p></div>
@@ -31,26 +29,24 @@
             </div>
 
             <nav class="header__nav">
-
                 <label class="hamburger__icon" for="toggle">&#9776;</label>
                 <input type="checkbox" id="toggle">
 
                 <div class="nav__menu">
-
-                    <a href="#" class="menu__link">home</a>
-                    <a href="#" class="menu__link">about&nbsp;us</a>
-                    <a href="#" class="menu__link">projects</a>
-                    <a href="#" class="menu__link">clients</a>
-                    <a href="#" class="menu__link">contact</a>
+                    <a href="#homeslider" class="menu__link">home</a>
+                    <a href="#aboutus" class="menu__link">about&nbsp;us</a>
+                    <a href="#projects" class="menu__link">projects</a>
+                    <a href="#clients" class="menu__link">clients</a>
+                    <a href="#contact" class="menu__link">contact</a>
                     <a href="#" class="menu__link">blog</a>
+                    <div class="underbar"></div>
                 </div>
-
             </nav>
         </header>
 
 
         <!-- Home slider section -->
-        <section class="app__homeslider">
+        <section class="app__homeslider" id="homeslider">
 
             <!-- Slider main container -->
             <div class="swiper-container">
@@ -91,7 +87,7 @@
 
 
         <!-- About us section -->
-        <section class="app__aboutus">
+        <section class="app__aboutus" id="aboutus">
 
             <article class="aboutus__text">
 
@@ -115,7 +111,7 @@
 
 
         <!-- Inspiration section -->
-        <section class="app__inspirations">
+        <section class="app__inspirations" >
             <div class="inspirations__foto insp1"><span class="inspiration__foto-text">Idea.</span></div>
             <div class="inspirations__foto insp2"><span class="inspiration__foto-text">Concept.</span></div>
             <div class="inspirations__foto insp3"><span class="inspiration__foto-text">Design.</span></div>
@@ -137,13 +133,13 @@
 
             </article>
 
-            <div class="latest__projects">LATEST PROJECTS</div>
+            <p class="latest__projects">LATEST PROJECTS</p>
 
         </section>
 
         <!-- Projects slider section -->
 
-        <section class="app__projectslider">
+        <section class="app__projectslider" id="projects">
 
             <div class="demo">
                 <div class="item">
@@ -205,7 +201,7 @@
 
          <!--Logos section -->
 
-        <section class="app__logos">
+        <section class="app__logos" id="clients">
 
             <article class="logos__box">
 
@@ -222,7 +218,7 @@
 
         <!-- Contact form section -->
 
-        <section class="app__form">
+        <section class="app__form" id="contact">
 
             <div class="contact">
 

@@ -1,14 +1,57 @@
+.header {
+  height: 9.8rem;
+  width: 100%;
+  display: flex;
+  border-bottom: 0.5px solid $accentColor;
+  .header__logo {
+    width: 38.4rem;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    .logo__box{
+      margin: 3.2rem 0;
+      .logo__text {
+        position: relative;
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        margin-left: 5.76rem;
+        .logo__zindex{
+          z-index: 10;
+        }
+        &:before {
+          @include pseudoelement(3px solid $accentColor);
+          width: 3.5rem;
+          height: 3.5rem;
+          left: -2rem;
+        }
+        &:after {
+          @include pseudoelement(3px solid $mainColor);
+          width: 1.5rem;
+          height: 1.5rem;
+          left: -2.65rem;
+          z-index: 2;
+        }
+      }
+    }
+  }
 
-//hover effect
-@media only screen and (min-width: 900px) {
-  .menu__link {
-    text-decoration: none;
-    color: black;
-    padding-right: 4rem !important;
-    &:hover {
-      border-bottom: 4px solid #f2f2f2;
-      padding-bottom: 5px;
-      // text-decoration: underline solid #d9dcdd !important;
+  .header__nav {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+    .nav__menu {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      margin-right: 5rem;
+      .menu__link {
+        text-decoration: none;
+        color: black;
+        font-size: 1.1rem;
+        padding-right: 3rem !important;
+      }
     }
   }
 }
@@ -23,12 +66,55 @@
   display: none;
 }
 
+//hover effect on nav
+@media only screen and (min-width: $bp-portrait) {
+  .nav__menu{
+    position: relative;
+    .menu__link {
+      text-decoration: none;
+      color: black;
+      padding-right: 4rem !important;
+      &:nth-of-type(1):hover ~ .underbar{
+        width: 33px;
+      }
+      &:nth-of-type(2):hover ~ .underbar{
+        width: 47px;
+        left: 60px;
+      }
+      &:nth-of-type(3):hover ~ .underbar{
+        width: 45px;
+        left: 136px;
+      }
+      &:nth-of-type(4):hover ~ .underbar{
+        left: 209px;
+        width: 37px;
+      }
+      &:nth-of-type(5):hover ~ .underbar{
+        left: 275px;
+        width: 42px;
+      }
+      &:nth-of-type(6):hover ~ .underbar{
+        left: 345px;
+        width: 27px;
+      }
+    }
+    .underbar{
+      width: 0;
+      height: 5px;
+      background: $accentColor;
+      top: 20px;
+      position: absolute;
+      -webkit-transition: 0.5s ease;
+    }
+  }
+}
+
 
 //mobile
-@media only screen and (max-width: 519px) {
-
-  .app__header{
+@media only screen and (max-width: $bp-mobile) {
+  .header{
     width: 100%;
+    position: relative;
   }
   .hamburger__icon{
     display: block;
@@ -42,113 +128,52 @@
     left: -0.1rem;
     top: 9.8rem;
     z-index: 20000 !important;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     margin-right: 5rem;
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
   }
   .menu__link{
-    display: block !important;
+    display: none ;
     border-bottom: 1px solid #f2f2f2;
     margin: 0;
     font-size: 3rem !important;
     padding: 1.5rem 5rem;
     width: 100%;
+    transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -o-transition:All 1s ease;
   }
   #toggle:checked + .nav__menu {
     display: block !important;
+    .menu__link{
+      display: block !important;
+    }
+    @keyframes load{
+      100%{
+        opacity: 1;
+      }
+    }
   }
-  .app__header{
-    position: relative;
-  }
+
 }
 
-@media only screen and (min-width: 519px) and (max-width: 767px){
-  .app__header{
-    width: 100% !important;
-    margin-right: 2rem !important;
+@media only screen and (min-width: $bp-mobile) and (max-width: $bp-phablet ){
+  .header{
+    width: 100% ;
+    margin-right: 2rem;
   }
   .header__nav{
     width: 70% !important;
-      .menu__link:first-child{
-        padding-left: 2rem;
-      }
-      .menu__link{
-        width: 16.6%;
-      }
+    .menu__link:first-child{
+      padding-left: 2rem;
     }
-
-  }
-
-
-@mixin pseudoelement($border){
-  content: "";
-  display: block;
-  position: absolute;
-  border: $border;
-}
-
-.app__header {
-  height: 9.8rem;
-  width: 100%;
-  display: flex;
-  border-bottom: 0.5px solid #f2f2f2;
-  .header__logo {
-    width: 38.4rem;
-    display: flex;
-    align-items: center;
-    font-weight: 900;
-    .logo__box{
-      margin-top: 3.2rem;
-      margin-bottom: 3.2rem;
-      .logo__text {
-        position: relative;
-        font-size: 1.7rem;
-        display: flex;
-        align-items: center;
-        margin-left: 5.76rem;
-        .logo__zindex{
-          z-index: 10;
-        }
-        &:before {
-          @include pseudoelement(3px solid #f2f2f2);
-          width: 3.5rem;
-          height: 3.5rem;
-          left: -2rem;
-        }
-        &:after {
-          @include pseudoelement(3px solid #97d1eb);
-          width: 1.5rem;
-          height: 1.5rem;
-          left: -2.65rem;
-          z-index: 2;
-        }
-      }
-    }
-  }
-
-  .header__nav {
-    font-weight: 700;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    margin-right: 30%;
-    .nav__menu {
-      display: flex;
-      align-items: center;
-      margin-right: 5rem;
-      .menu__link {
-        text-decoration: none;
-        color: black;
-        font-size: 1.1rem;
-        padding-right: 3rem !important;
-      }
+    .menu__link{
+      width: 16.6%;
     }
   }
 }
 
-$bp-mobile-narrow                 : ( max:  479px );
-$bp-mobile                        : ( max:  519px );
-$bp-phablet                       : ( max:  767px );
-$bp-portrait                      : ( max:  1023px );
-$bp-tablet                        : ( max:  1199px );
-$bp-desktop                       : ( max: 1359px );
-$bp-desktop-wide                  : ( max: 1600px );

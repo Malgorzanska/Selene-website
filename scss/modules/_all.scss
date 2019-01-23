@@ -1,6 +1,13 @@
 
 //mixins etc
 
+@mixin pseudoelement($border){
+  content: "";
+  display: block;
+  position: absolute;
+  border: $border;
+}
+
 
 
 
