@@ -1,14 +1,27 @@
-
 //mixins etc
-
 @mixin pseudoelement($border){
   content: "";
   display: block;
   position: absolute;
   border: $border;
 }
+@mixin centerFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
+@mixin pseudonumber($content) {
+  content: $content;
+  display: block;
+  position: absolute;
+  z-index: -2;
+  font-weight: 700;
+  color: white;
+  font-size: 20rem;
+  bottom: -200%;
+  left: 30%;
+  text-shadow: 2px 2px 5px #B5AEB1;
+}
 
 

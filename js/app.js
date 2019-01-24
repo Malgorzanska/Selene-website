@@ -18,4 +18,14 @@ $(document).ready(function () {
         spaceBetween: 200
     });
 
+
 });
+//
+// var inspirationText = document.querySelectorAll('.inspiration__foto-text');
+// var inspirationSection = document.querySelectorAll('.inspirations__foto');
+//
+//
+//
+// inspirationSection.addEventListener('click', function(ev) {
+//     inspirationText.style.display = 'none';
+// });

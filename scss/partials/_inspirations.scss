@@ -1,4 +1,4 @@
-.app__inspirations {
+.inspirations {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -17,9 +17,7 @@
   .inspirations__foto {
     width: 25%;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include centerFlex();
       span {
         color: white;
         font-size: 4rem;
@@ -27,37 +25,49 @@
       }
       &:hover {
         &:after {
-          content: "";
-          display: block;
+          @include pseudoelement(1rem solid $mainColor);
           width: 20%;
           height: 70%;
-          border: 1rem solid #9ecfed;
-          position: absolute;
           z-index: 2;
         }
       }
-
+      p{
+      display: none;
+     }
     }
 }
 
-@media only screen and (min-width: 519px) and (max-width: 767px) {
-  .app__inspirations{
+
+@media only screen and (min-width: $bp-mobile) and (max-width: $bp-portrait) {
+  .inspirations{
     flex-wrap: wrap;
     height: 100%;
     .inspirations__foto{
       width: 50%;
       height: 50vh;
+      &:hover {
+        &:after {
+          width: 45%;
+          height: 45%;
+        }
+      }
     }
   }
 }
 
-@media only screen and (max-width: 519px) {
-  .app__inspirations{
+@media only screen and (max-width: $bp-mobile) {
+  .inspirations{
     flex-wrap: wrap;
     height: 100%;
     .inspirations__foto{
       width: 100%;
       height: 50vh;
+      &:hover {
+        &:after {
+          width: 90%;
+          height: 45%;
+        }
+      }
     }
   }
 }

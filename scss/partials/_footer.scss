@@ -1,21 +1,15 @@
 footer{
   width:100%;
   height: 15vh;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #000;
+  @include centerFlex();
   text-align: center;
-  div{
+  .footer__wraper{
     height: 70%;
-    width: 15%;
-    display: inline-block;
+    width: 25%;
+    @include centerFlex();
+    flex-direction: column;
 
-
-    .logo__box{
-      display: block;
-      margin-top: 0.4rem;
-      margin-left: 1.5rem;
       .logo__text {
         color: #929292;
         font-weight: 700;
@@ -42,11 +36,9 @@ footer{
         }
       }
     }
-    p{
-
+    .copyright{
       color: #5d5d5d;
-
-    }
+      padding-top: 1rem;
   }
-
 }
+

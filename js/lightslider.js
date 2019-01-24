@@ -13,7 +13,7 @@
         useCSS: true,
         cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',
         easing: 'linear', //'for jquery animation',//
-        speed: 400, //ms'
+        speed: 500, //ms'
         auto: false,
         pauseOnHover: false,
         loop: false,

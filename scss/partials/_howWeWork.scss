@@ -1,102 +1,82 @@
-.app__howwework{
+@media only screen and (max-width:$bp-mobile){
+  p {
+    &:before {
+      left: 5% !important;
+      width: 6rem;
+    }
+    &:after {
+      left: 70% !important;
+    }
+  }
+  .value{
+    font-size: 2.3rem;
+    &:after{
+      font-size: 15rem !important;
+    }
+  }
+  .howWeWork{
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width:$bp-mobile)and(max-width: $bp-phablet){
+
+  p {
+    &:before {
+      left: 15% !important;
+    }
+    &:after {
+      left: 65% !important;
+    }
+  }
+  .value{
+    font-size: 2.5rem;
+    &:after{
+      font-size: 16rem !important;
+    }
+  }
+}
+
+
+@media only screen and (min-width:$bp-phablet)and(max-width: $bp-tablet) {
+  p {
+    &:before {
+      left: 27% !important;
+    }
+    &:after {
+      left: 60% !important;
+    }
+  }
+  .value{
+    font-size: 3rem;
+
+  }
+}
+
+
+
+.howWeWork {
   width: 100%;
   height: 70vh;
-  border: 1px solid black;
   background-image: url("../images/howwework.png");
-//  background-blend-mode: difference;
   background-size: cover;
-  display: flex;
-  align-items: center;
   flex-direction: column;
   text-align: center;
+  @include centerFlex();
 
-  p{
-  //  display: inline-block;
- //   height: 25%;
+  .howWeWork__topText {
+    //  display: inline-block;
+    height: 25%;
     width: 80%;
-    padding: 4%;
-    color: #9ecfed;
+    padding: 8vh;
+    color: $mainColor;
     font-weight: bold;
     position: relative;
     &:after, &:before {
-      content: "";
-      display: block;
+      @include pseudoelement($mainColor);
       width: 9rem;
       height: 0.1rem;
-      background-color: #9ecfed;
-      position: absolute;
-    }
-    &:before{
-      left: 35%;
-      bottom: 50%;
-    }
-    &:after {
-      left: 56%;
-      bottom: 50%;
-    }
-  }
-
-  @mixin pseudonumber($content){
-    content: $content;
-    display: block;
-    position: absolute;
-    z-index: -2;
-    font-weight: 700;
-    color: lightpink;
-    font-size: 20rem;
-    bottom: -200%;
-    left: 30%;
-    //dac tutaj text shadow!
-  }
-
-
-  .values {
-    display: flex;
-    align-items: center;
-    height: 45%;
-    width: 80%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 3.5rem;
-    .value {
-      width: 33.3%;
-      z-index: 2000;
-      position: relative;
-    }
-      .one{
-        &:after {
-          @include pseudonumber("1");
-        }
-      }
-
-      .two {
-        &:after {
-          @include pseudonumber("2");
-        }
-      }
-      .three{
-        &:after {
-          @include pseudonumber("3");
-          bottom: -180%;
-        }
-      }
-        }
-      }
-
-
-  .latest__projects {
-    background-color: white;
-    color: #9ecfed;
-    width: 80%;
-    font-weight: bold;
-    padding: 5rem;
-    &:after, &:before {
-      content: "";
-      display: block;
-      width: 9rem;
-      height: 0.1rem;
-      background-color: #9ecfed;
-      position: absolute;
+      background-color: $mainColor;
     }
     &:before {
       left: 35%;
@@ -107,3 +87,65 @@
       bottom: 50%;
     }
   }
+
+  .values {
+    display: flex;
+    align-items: center;
+    height: 45%;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5rem;
+    &:hover{
+      color: #00cc99;
+    }
+    .value {
+      width: 33.3%;
+      z-index: 2000;
+      position: relative;
+    }
+    .one {
+      &:after {
+        @include pseudonumber("1");
+      }
+    }
+
+    .two {
+      &:after {
+        @include pseudonumber("2");
+      }
+    }
+    .three {
+      &:after {
+        @include pseudonumber("3");
+        font-size: 18rem;
+        bottom: -160%;
+        left: 30%;
+      }
+    }
+  }
+
+  .howWeWork__bottomText {
+    background-color: white;
+    color: #9ecfed;
+    width: 80%;
+    height: 30%;
+    font-weight: bold;
+    padding: 10vh;
+    position: relative;
+    &:after, &:before {
+      @include pseudoelement($mainColor);
+      width: 9rem;
+      height: 0.07rem;
+      background-color: $mainColor;
+    }
+    &:before {
+      left: 35%;
+      bottom: 50%;
+    }
+    &:after {
+      left: 56%;
+      bottom: 50%;
+    }
+  }
+}

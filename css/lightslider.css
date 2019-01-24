@@ -25,7 +25,7 @@
 }
 .lSSlideWrapper {
     max-width: 100%;
-    overflow: hidden;
+   overflow: hidden;
     position: relative;
 }
 .lSSlideWrapper > .lightSlider:after {
@@ -189,22 +189,22 @@
 }
 
 
-/* vertical */
-.lSSlideOuter.vertical {
-    position: relative;
-}
-.lSSlideOuter.vertical.noPager {
-    padding-right: 0 !important;
-}
-.lSSlideOuter.vertical .lSGallery {
-    position: absolute !important;
-    right: 0;
-    top: 0;
-}
-.lSSlideOuter.vertical .lightSlider > * {
-    width: 100% !important;
-    max-width: none !important;
-}
+/*!* vertical *!*/
+/*.lSSlideOuter.vertical {*/
+    /*position: relative;*/
+/*}*/
+/*.lSSlideOuter.vertical.noPager {*/
+    /*padding-right: 0 !important;*/
+/*}*/
+/*.lSSlideOuter.vertical .lSGallery {*/
+    /*position: absolute !important;*/
+    /*right: 0;*/
+    /*top: 0;*/
+/*}*/
+/*.lSSlideOuter.vertical .lightSlider > * {*/
+    /*width: 100% !important;*/
+    /*max-width: none !important;*/
+/*}*/
 
 /* vertical controlls */
 .lSSlideOuter.vertical .lSAction > a {
