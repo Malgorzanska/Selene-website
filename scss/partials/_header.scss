@@ -1,3 +1,6 @@
+@import "../modules/all";
+@import "../modules/variables";
+
 .header {
   height: 9.8rem;
   width: 100%;
@@ -10,13 +13,13 @@
     font-weight: 900;
     .logo__box{
       margin: 3.2rem 0;
-      .logo__text {
+      .logo-text {
         position: relative;
         font-size: 1.7rem;
         display: flex;
         align-items: center;
         margin-left: 5.76rem;
-        .logo__zindex{
+        .logo-zindex{
           z-index: 10;
         }
         &:before {
@@ -50,11 +53,12 @@
         text-decoration: none;
         color: black;
         font-size: 1.1rem;
-        padding-right: 3rem !important;
+        padding-right: 3rem ;
       }
     }
   }
 }
+
 .hamburger__icon {
   font-size: 2.6rem;
   line-height: 9.8rem;
@@ -71,9 +75,7 @@
   .nav__menu{
     position: relative;
     .menu__link {
-      text-decoration: none;
-      color: black;
-      padding-right: 4rem !important;
+      padding-right: 4rem ;
       &:nth-of-type(1):hover ~ .underbar{
         width: 33px;
       }
@@ -109,7 +111,6 @@
   }
 }
 
-
 //mobile
 @media only screen and (max-width: $bp-mobile) {
   .header{
@@ -121,44 +122,34 @@
     cursor: pointer;
   }
   .nav__menu{
-    display: none !important;
+    display: none;
     text-align: center;
     width: 100%;
     position: absolute;
     left: -0.1rem;
     top: 9.8rem;
-    z-index: 20000 !important;
+    z-index: 20000 ;
     background-color: #fff;
     margin-right: 5rem;
-    transition:All 1s ease;
+    transition: All 1s ease;
     -webkit-transition:All 1s ease;
     -moz-transition:All 1s ease;
     -o-transition:All 1s ease;
-  }
-  .menu__link{
+  } .menu__link, a.menu-item{
     display: none ;
     border-bottom: 1px solid #f2f2f2;
+    font-size: 3rem !important ;
     margin: 0;
-    font-size: 3rem !important;
     padding: 1.5rem 5rem;
     width: 100%;
-    transition:All 1s ease;
-    -webkit-transition:All 1s ease;
-    -moz-transition:All 1s ease;
-    -o-transition:All 1s ease;
-  }
-  #toggle:checked + .nav__menu {
-    display: block !important;
+  } #toggle:checked + .nav__menu {
+    display: block;
+    -webkit-animation: 1s slide-down ease-in;
+    animation: 1s slide-down ease-in;
     .menu__link{
-      display: block !important;
-    }
-    @keyframes load{
-      100%{
-        opacity: 1;
-      }
+      display: block;
     }
   }
-
 }
 
 @media only screen and (min-width: $bp-mobile) and (max-width: $bp-phablet ){

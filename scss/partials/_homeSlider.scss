@@ -1,3 +1,6 @@
+@import "../modules/all";
+@import "../modules/variables";
+
 .homeslider {
   width: 100%;
   height: 85vh;
@@ -6,20 +9,19 @@
   display: flex;
   .swiper-container {
     width: 100%;
-    margin-right: 0 !important;
+    margin-right: 0;
     .swiper-wrapper {
       width: 70%;
       color: black;
       font-size: 3rem;
-      z-index: -10 !important;
+      z-index: -10;
       .swiper-slide {
         position: relative;
         .swiper-img {
           width: 87%;
           height: 100vh;
           float: right;
-        }
-        .swiper-wraper-text {
+        } .swiper-wraper-text {
           position: absolute;
           display: block;
           top: 50%;
@@ -50,31 +52,31 @@
   flex-direction: column;
   padding-left: 8.5rem;
   background-color: white;
-  .left--btn{
-    width:4rem;
-    height:4rem;
-    border: 0.5px solid #f2f2f2;
+  .left-line{
+    border: 0.5px solid $accentColor;
+    height: 26vh;
     z-index: 1000;
   }
-  .left--bluebox{
+  .left-btn{
+    width:4rem;
+    height:4rem;
+    border: 0.5px solid $accentColor;
+    z-index: 1000;
+  }
+  .left-bluebox{
     width:13rem;
     height:13rem;
-    background-color: #9ecfed;
+    background-color: $mainColor;
     color: white;
     text-align: center;
     font-size: 5rem;
-    font-weight: bolder;
+    font-weight: 700;
     z-index: 1000;
-    span{
+    .left-number{
       display: inline-block;
       padding-top: 2.5rem;
       z-index: 1000;
     }
-  }
-  .left--line{
-    border: 0.5px solid #f2f2f2;
-    height: 26vh;
-    z-index: 1000;
   }
 }
 .clearfix {
@@ -82,6 +84,7 @@
 }
 
 .swiper-button-prev{
+  position: absolute;
   left: 136px !important;
   top:170px !important;
   background-image: url("../images/arrow_left.png");
@@ -92,7 +95,7 @@
 .swiper-button-prev, .swiper-button-disabled {
   background-image: url("../images/arrow_left.png") !important;
   background-size: 15px 20px !important;
-  z-index: 2000 !important;
+  z-index: 2000;
 }
 .swiper-button-next {
   background-image: url("../images/arrow_right.png") !important;
@@ -100,20 +103,37 @@
   position: relative;
   left: 136px !important;
   top: 340px !important;
-  z-index: 2000 !important;
+  z-index: 2000;
 }
-
-@media only screen and (max-width: $bp-tablet){
-  .homeslider__left, .swiper-button-prev, .swiper-button-next{
+@media only screen and (min-width: $bp-tablet){
+  .tablets-swiper{
     display: none;
   }
-  .swiper-wraper-text{
+}
+
+
+@media only screen and (max-width: $bp-tablet) {
+  .homeslider__left, .swiper-button-prev, .swiper-button-next {
+    display: none;
+  }
+  .swiper-wraper-text {
     font-size: 4rem !important;
-    &:after{
+    &:after {
       width: 39rem !important;
     }
   }
 
+  .tablets-swiper{
+    font-size: 4rem;
+    position: absolute;
+    right:1%;
+    bottom: 50%;
+    text-align: center;
+    padding-top:0.7rem;
+    -webkit-animation: 2s slide-to-right infinite;
+    animation: 2s slide-to-right infinite;
+  }
+}
   @media only screen and (max-width: $bp-mobile){
     .swiper-wraper-text{
       font-size: 3.5rem !important;
@@ -122,4 +142,4 @@
       }
     }
   }
-}
+
