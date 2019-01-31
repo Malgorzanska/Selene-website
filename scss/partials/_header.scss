@@ -4,11 +4,11 @@
 .header {
   height: 9.8rem;
   width: 100%;
-  display: flex;
+  @include flexForAll();
   border-bottom: 0.5px solid $accentColor;
   .header__logo {
     width: 38.4rem;
-    display: flex;
+    @include flexForAll();
     align-items: center;
     font-weight: 900;
     .logo__box{
@@ -16,7 +16,7 @@
       .logo-text {
         position: relative;
         font-size: 1.7rem;
-        display: flex;
+        @include flexForAll();
         align-items: center;
         margin-left: 5.76rem;
         .logo-zindex{
@@ -41,12 +41,12 @@
 
   .header__nav {
     width: 40%;
-    display: flex;
+    @include flexForAll();
     align-items: center;
     margin-right: 30%;
     .nav__menu {
       font-weight: 700;
-      display: flex;
+      @include flexForAll();
       align-items: center;
       margin-right: 5rem;
       .menu__link {
@@ -106,7 +106,9 @@
       background: $accentColor;
       top: 20px;
       position: absolute;
+      -moz-transition: 0.5s ease;
       -webkit-transition: 0.5s ease;
+      transition:  0.5s ease;;
     }
   }
 }
@@ -144,6 +146,7 @@
     width: 100%;
   } #toggle:checked + .nav__menu {
     display: block;
+    -moz-animation: 1s slide-down ease-in;
     -webkit-animation: 1s slide-down ease-in;
     animation: 1s slide-down ease-in;
     .menu__link{

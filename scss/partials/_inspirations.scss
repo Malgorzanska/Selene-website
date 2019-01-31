@@ -4,7 +4,7 @@
 .inspirations {
   width: 100%;
   height: 80vh;
-  display: flex;
+  @include flexForAll();
 
   @each $number in 1, 2, 3, 4 {
     .insp#{$number} {
@@ -22,7 +22,7 @@
   }
   .inspirations__foto {
     width: 25%;
-    background-size: cover;
+    @include bgSizeForAll(cover);
     @include centerFlex();
       .inspiration__foto-text {
         color: white;
@@ -40,6 +40,10 @@
     }
     .toggle-text{
       display: none;
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 1rem 4.5rem;
     }
   }
 }

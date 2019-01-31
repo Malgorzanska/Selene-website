@@ -9,7 +9,7 @@
     width: 81%;
     height: 100%;
     margin: 0 auto;
-    display: flex;
+    @include flexForAll();
     position:relative;
     &:after {
       @include pseudoelement(12px solid $mainColor);
@@ -29,6 +29,7 @@
       .form__nav{
           padding-bottom: 15%;
         .nav-item{
+          display: -moz-inline-block;
           display: inline-block;
           padding-right: 5%;
           color: #d9dcdd;
@@ -120,7 +121,7 @@
       z-index: -2;
       position: relative;
       background-image: url("../images/contactus.png");
-      background-size: cover;
+      @include bgSizeForAll(cover);
     }
   }
 

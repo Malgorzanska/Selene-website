@@ -4,9 +4,9 @@
 .aboutus{
   height: 70vh;
   width: 100%;
-  display: flex;
+  @include flexForAll();
   .aboutus__text{
-    display: flex;
+    @include flexForAll();
     flex-direction: column;
     justify-content: center;
     width: 55%;
@@ -26,18 +26,18 @@
   .aboutus__img{
     height: 100%;
     width: 45%;
-    display: flex;
+    @include flexForAll();
     align-items: center;
     justify-content: flex-end;
     .aboutus__building{
       background: url("../images/5.png") no-repeat;
-      background-size:cover;
+      @include bgSizeForAll(cover);
       width: 40rem;
       height: 25rem;
       border: 10px solid $mainColor;
       border-right: none;
       position:relative;
-      display:flex;
+      @include flexForAll();
       align-items: center;
       .img__title{
         font-size: 6rem;
@@ -53,10 +53,12 @@
 }
 
 .text__slide--right{
+  -moz-animation: 3s slide-to-right forwards;
   -webkit-animation: 3s slide-to-right forwards;
   animation: 3s slide-to-right forwards;
 }
 .text__slide--left{
+  -moz-animation: 4s slide-to-left forwards;
   -webkit-animation: 4s slide-to-left forwards;
   animation: 4s slide-to-left forwards;
 }
@@ -73,6 +75,7 @@
 
 @media only screen and (max-width: $bp-phablet) {
   .aboutus {
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     height: 100%;
     .aboutus__text {
@@ -85,6 +88,7 @@
     .aboutus__img {
       width: 100%;
       margin-top: 0;
+      -webkit-align-items: flex-start;
       align-items: flex-start;
       border-right: 10px solid $mainColor;;
       .aboutus__building{

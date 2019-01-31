@@ -18,7 +18,7 @@
         font-weight: 700;
         position: relative;
         font-size: 1.7rem;
-        display: flex;
+        @include flexForAll();
         align-items: center;
         margin-left: 5.76rem;
         .logo__zindex{

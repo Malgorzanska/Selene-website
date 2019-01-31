@@ -6,7 +6,7 @@
   height: 85vh;
   max-height: 626px;
   border-bottom: 0.5px solid $accentColor;
-  display: flex;
+  @include flexForAll();
   .swiper-container {
     width: 100%;
     margin-right: 0;
@@ -26,6 +26,9 @@
           display: block;
           top: 50%;
           transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
           font-size: 5.5rem;
           font-weight: 900;
           line-height: 8.5rem;
@@ -73,6 +76,7 @@
     font-weight: 700;
     z-index: 1000;
     .left-number{
+      display: -moz-inline-block;
       display: inline-block;
       padding-top: 2.5rem;
       z-index: 1000;
@@ -130,6 +134,7 @@
     bottom: 50%;
     text-align: center;
     padding-top:0.7rem;
+    -moz-animation: 2s slide-to-right infinite;
     -webkit-animation: 2s slide-to-right infinite;
     animation: 2s slide-to-right infinite;
   }
