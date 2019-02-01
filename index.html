@@ -10,21 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
     <link type="text/css" rel="stylesheet" href="css/lightslider.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <!--<script-->
-            <!--src="http://code.jquery.com/jquery-3.3.1.min.js"-->
-            <!--integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="-->
-            <!--crossorigin="anonymous">-->
-    <!--</script>-->
     <script src="js/lightslider.js"></script>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container wrapper">
 <!-- Header section -->
-        <header class="header">
+        <header class="header" id="header">
             <div class="header__logo">
                 <div class="logo__box">
-                    <div class="logo__text"><p class="logo__zindex">Selene.</p></div>
+                    <div class="logo-text"><p class="logo-zindex">Selene.</p></div>
                 </div>
             </div>
 
@@ -32,171 +27,218 @@
                 <label class="hamburger__icon" for="toggle">&#9776;</label>
                 <input type="checkbox" id="toggle">
 
-                <div class="nav__menu">
-                    <a href="#homeslider" class="menu__link">home</a>
+                <div class="nav__menu ">
+                    <a href="#homeslider" class="menu__link menu-item">home</a>
                     <a href="#aboutus" class="menu__link">about&nbsp;us</a>
                     <a href="#projects" class="menu__link">projects</a>
                     <a href="#clients" class="menu__link">clients</a>
                     <a href="#contact" class="menu__link">contact</a>
                     <a href="#" class="menu__link">blog</a>
-                    <div class="underbar"></div>
                 </div>
             </nav>
         </header>
 
-<!-- Home slider section -->
-        <section class="homeslider" id="homeslider">
+        <main>
+            <!-- Home slider section -->
+            <section class="homeslider" id="homeslider">
 
-            <div class="swiper-container">
-                <div class="homeslider__left">
-                    <hr class="left--line"/>
-                    <div class="left--btn"></div>
-                    <div class="left--bluebox"><span>01</span></div>
-                    <div class="left--btn"></div>
-                    <hr class="left--line"/>
+                <div class="swiper-container wrapper">
+                    <div class="homeslider__left">
+                        <hr class="left-line"/>
+                        <div class="left-btn">
+                            <div class="swiper-button-next" id="next"></div>
+                        </div>
+                        <div class="left-bluebox">
+                            <span class="left-number">01</span>
+                        </div>
+                        <div class="left-btn">
+                            <div class="swiper-button-prev" id="prev"></div>
+                        </div>
+                        <hr class="left-line"/>
+                    </div>
+
+                    <div class="tablets-swiper"> > </div>
+
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="swiper-img" src="images/1.jpg">
+                            <span class="swiper-wraper-text">Lorem ipsum <br/>dolor amet enim</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-img" src="images/1.jpg">
+                            <span class="swiper-wraper-text">Curabitur et <br/>ligula amet enim</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-img" src="images/1.jpg">
+                            <span class="swiper-wraper-text">Phasellus ligula<br/>in, dolor</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper-img" src="images/main.png">
+                            <span class="swiper-wraper-text">Architecture<br/>aims at eternity</span>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
                 </div>
+            </section>
 
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Lorem ipsum <br/>dolor amet enim</span></div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Curabitur et <br/>ligula amet enim</span></div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/1.jpg"><span class="swiper-wraper-text">Phasellus ligula<br/>in, dolor</span></div>
-                    <div class="swiper-slide"><img class="swiper-img" src="images/main.png"><span class="swiper-wraper-text">Architecture<br/>aims at eternity</span></div>
+            <!-- About us section -->
+            <section class="aboutus" id="aboutus">
+                <article class="aboutus__text">
+                    <h2 class="text__title ">Curabitur&nbsp;volutpat</h2>
+                    <p class="text__description ">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                        Maecenas malesuada elit lectus felis, malesuada ultricies.Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac,
+                        laoreet enim. </p>
+                </article>
+                <article class="aboutus__img">
+                    <div class="aboutus__building">
+                        <p class="img__title">We create <br/><span class="smaller__text">cool ideas.</span></p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Inspiration section -->
+            <section class="inspirations">
+                <div class="inspirations__foto insp1">
+                    <span class="inspiration__foto-text">Idea.</span>
+                    <p class="toggle-text">Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim.</p>
                 </div>
-
-                <div class="swiper-button-prev" id="prev"></div>
-                <div class="swiper-button-next" id="next"></div>
-                <div class="clearfix"></div>
-            </div>
-        </section>
-
-<!-- About us section -->
-        <section class="aboutus" id="aboutus">
-            <article class="aboutus__text">
-                <h2 class="text__title">Curabitur&nbsp;volutpat</h2>
-                <p class="text__description">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
-                    Maecenas malesuada elit lectus felis, malesuada ultricies.Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac,
-                    laoreet enim. </p>
-            </article>
-            <article class="aboutus__img">
-                <div class="aboutus__building">
-                    <p class="img__title">We create <br/><span class="smaller__text">cool ideas.</span></p>
+                <div class="inspirations__foto insp2">
+                    <span class="inspiration__foto-text">Concept.</span>
+                    <p class="toggle-text">Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum.</p>
                 </div>
-            </article>
-        </section>
+                <div class="inspirations__foto insp3">
+                    <span class="inspiration__foto-text">Design.</span>
+                    <p class="toggle-text"> Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam viverra consectetuer.</p>
+                </div>
+                <div class="inspirations__foto insp4">
+                    <span class="inspiration__foto-text">Develop.</span>
+                    <p class="toggle-text"> Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ips Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu,</p>
+                </div>
+            </section>
 
-<!-- Inspiration section -->
-        <section class="inspirations">
-            <div class="inspirations__foto insp1"><span class="inspiration__foto-text">Idea.</span><p>LOREM LOREM</p></div>
-            <div class="inspirations__foto insp2"><span class="inspiration__foto-text">Concept.</span><p>LOREM LOREM</p></div>
-            <div class="inspirations__foto insp3"><span class="inspiration__foto-text">Design.</span><p>LOREM LOREM</p></div>
-            <div class="inspirations__foto insp4"><span class="inspiration__foto-text">Develop.</span><p>LOREM LOREM</p></div>
-        </section>
+            <!-- How do we work section -->
 
-<!-- How do we work section -->
+            <section class="work container">
+                <!--<div class="container">-->
 
-        <section class="howWeWork">
-            <p class="howWeWork__topText">HOW WE WORK</p>
+                    <div class="work__text-container container">
+                        <p class="work__text work__top-text">HOW WE WORK</p>
+                    </div>
 
-            <article class="values">
-                <div class="value one" >Dexterity</div>
-                <div class="value two">Team</div>
-                <div class="value three">Partnership</div>
-            </article>
+                    <article class="values">
+                        <div class="value pseudonumber-one" >Dexterity</div>
+                        <div class="value pseudonumber-two">Team</div>
+                        <div class="value pseudonumber-three">Partnership</div>
+                    </article>
+                    <div class="work__text-container container">
+                        <p class="work__text work__bottom-text">LATEST PROJECTS</p>
+                    </div>
 
-            <p class="howWeWork__bottomText">LATEST PROJECTS</p>
 
-        </section>
 
-<!-- Projects slider section -->
 
-        <section class="projectslider" id="projects">
 
-            <div class="slider__container">
-                <div class="item">
-                    <div class="clearfix">
-                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                            <li data-thumb="images/slider.png">
-                                <img src="images/slider.png" />
-                            </li>
-                            <li data-thumb="images/slider1.png">
-                                <img src="images/slider1.png" />
-                            </li>
-                            <li data-thumb="images/slider.png">
-                                <img src="images/slider.png" />
-                            </li>
-                            <li data-thumb="images/slider1.png">
-                                <img src="images/slider1.png" />
+                <!--</div>-->
 
-                            </li>
-                        </ul>
+
+            </section>
+
+            <!-- Projects slider section -->
+
+            <section class="project_slider" id="projects">
+
+                <div class="slider__container">
+                    <div class="item">
+                        <div class="clearfix">
+                            <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                <li class="gallery-item" data-thumb="images/slider.png">
+                                    <img class="gallery-img" src="images/slider.png" />
+                                </li>
+                                <li class="gallery-item" data-thumb="images/slider1.png">
+                                    <img class="gallery-img" src="images/slider1.png" />
+                                </li>
+                                <li class="gallery-item" data-thumb="images/slider.png">
+                                    <img class="gallery-img" src="images/slider.png" />
+                                </li>
+                                <li class="gallery-item" data-thumb="images/slider1.png">
+                                    <img class="gallery-img" src="images/slider1.png" />
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project__description">
+                <div class="project__description">
 
-                <article class="description__wrapper">
+                    <article class="description__wrapper">
 
-                     <h2 class="description__wrapper--header change">Modern art gallery <br/> Warsaw, Poland</h2>
-                     <p class="description__wrapper--content">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                        <h2 class="description__wrapper--header change">Modern art gallery <br/> Warsaw, Poland</h2>
+                        <p class="description__wrapper--content">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
+                            Maecenas malesuada elit lectus felis, malesuada ultricies.Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac,
+                            laoreet enim. <span class="hide-span show-span">Lorem ipsum dolor sit amet enim. iam ullamcorper. Suspendisse a pellentesque dui, non felis.
                       Maecenas malesuada elit lectus felis, malesuada ultricies.Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac,
-                      laoreet enim. </p>
+                      laoreet.</span> </p>
 
-                     <div class="btn">CASE STUDY</div>
+                        <div class="btn show">CASE STUDY</div>
 
-                </article>
-
-            </div>
-
-        </section>
-
- <!--Logos section -->
-        <section class="logos" id="clients">
-            <article class="logos__box">
-                <img class="logos--img" src="images/logo1.png"/>
-                <img class="logos--img" src="images/logo2.png"/>
-                <img class="logos--img" src="images/logo3.png"/>
-                <img class="logos--img" src="images/logo4.png"/>
-                <img class="logos--img" src="images/logo5.png"/>
-                <img class="logos--img" src="images/logo6.png"/>
-            </article>
-        </section>
-
-<!-- Contact form section -->
-
-        <section class="form" id="contact">
-            <div class="contact" id="wider" >
-                <div class="form__container">
-
-                    <ul class="form__nav">
-                        <li class="nav-item">CONTACT US</li>
-                        <li class="nav-item">PHONE</li>
-                        <li class="nav-item">E-MAIL</li>
-                    </ul>
-                    <form>
-                        <input type="text" id='name' name="name" placeholder="Name">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone">
-                        <input type="email" id="mail" name="email" placeholder="Email">
-                        <textarea name="message" placeholder="Message"></textarea>
-                        <input type="submit" name="send" value="SEND">
-                    </form>
-
+                    </article>
                 </div>
-                <div class="form__img"></div>
-            </div>
-        </section>
+            </section>
+
+            <!--Logos section -->
+            <section class="logos" id="clients">
+                <article class="logos__box">
+                    <img class="logos--img" src="images/logo1.png"/>
+                    <img class="logos--img" src="images/logo2.png"/>
+                    <img class="logos--img" src="images/logo3.png"/>
+                    <img class="logos--img" src="images/logo4.png"/>
+                    <img class="logos--img" src="images/logo5.png"/>
+                    <img class="logos--img" src="images/logo6.png"/>
+                </article>
+            </section>
+
+            <!-- Contact form section -->
+
+            <section class="form" id="contact">
+                <div class="contact" id="make-wider" >
+                    <div class="form__container">
+                        <ul class="form__nav">
+                            <li class="nav-item nav-item-form">CONTACT US</li>
+                            <li class="nav-item nav-item-phone">PHONE</li>
+                            <li class="nav-item nav-item-mail">E-MAIL</li>
+                        </ul>
+                        <form class="form is-visible">
+                            <input type="text" id='name'  name="name" placeholder="Name" class="required input">
+
+                            <input type="number" id="phone" name="phone" placeholder="Phone" class="required input">
+
+                            <input type="email" id="mail" name="email" placeholder="Email" class="required input">
+
+                            <textarea id ="message" name="message" placeholder="Message" class="required textarea"></textarea>
+
+                            <input type="submit" name="send" value="SEND">
+                        </form>
+
+                        <div class="phone-info ">Our phone number: <span class="phone-info-text">12345678</span></div>
+                        <div class="email-info ">Our e-mail adress: <span class="email-info-text">mail@mail.com</span></div>
+
+                    </div>
+                    <div class="form__img"></div>
+                </div>
+            </section>
+
+        </main>
 
 <!-- Footer -->
-        <footer>
+        <footer class="footer">
             <div class="footer__wraper">
                 <div>
                     <div class="logo__text"><p class="logo__zindex">Selene.</p></div>
                 </div>
-
                 <p class="copyright">Copyright 2019. All rights reserved</p>
             </div>
         </footer>
-
 
     </div>
 
