@@ -4,7 +4,6 @@
 .homeslider {
   width: 100%;
   height: 85vh;
-  max-height: 626px;
   border-bottom: 0.5px solid $accentColor;
   @include flexForAll();
   .swiper-container {
@@ -34,6 +33,14 @@
           line-height: 8.5rem;
           padding-left: 4.5rem;
           letter-spacing: 4px;
+
+          @media only screen and (max-width: $bp-tablet) {
+            font-size: 4rem;
+          }
+
+          @media only screen and (max-width: $bp-mobile){
+             font-size: 3.5rem;
+          }
           &:after {
             content: "";
             display: block;
@@ -42,6 +49,12 @@
             background-color: #9ecfed;
             z-index: 100;
             margin-top: 2rem;
+            @media only screen and (max-width: $bp-tablet) {
+              width: 39rem;
+            }
+            @media only screen and (max-width: $bp-mobile){
+              width: 34rem;
+            }
           }
         }
       }
@@ -51,12 +64,13 @@
 
 .homeslider__left {
   float: left;
+  height: 85vh;
   @include centerFlex();
   flex-direction: column;
   padding-left: 8.5rem;
   background-color: white;
   .left-line{
-    border: 0.5px solid $accentColor;
+    border: 0.05rem solid $accentColor;
     height: 26vh;
     z-index: 1000;
   }
@@ -65,6 +79,18 @@
     height:4rem;
     border: 0.5px solid $accentColor;
     z-index: 1000;
+    position:relative;
+
+    .swiper-button-prev{
+      background-image: url("../images/arrow_left.png");
+      @include bgSizeForAll(2rem 2rem);
+      transform: translateX(-0.5rem);
+    }
+    .swiper-button-next {
+      background-image: url("../images/arrow_right.png");
+      @include bgSizeForAll(2rem 2rem);
+      transform: translateX(0.5rem);
+    }
   }
   .left-bluebox{
     width:13rem;
@@ -87,46 +113,16 @@
   clear:both;
 }
 
-.swiper-button-prev{
-  position: absolute;
-  left: 136px !important;
-  top:170px !important;
-  background-image: url("../images/arrow_left.png");
-  width: 120px;
-  height: 120px;
-}
-
-.swiper-button-prev, .swiper-button-disabled {
-  background-image: url("../images/arrow_left.png") !important;
-  background-size: 15px 20px !important;
-  z-index: 2000;
-}
-.swiper-button-next {
-  background-image: url("../images/arrow_right.png") !important;
-  background-size: 15px 20px !important;
-  position: relative;
-  left: 136px !important;
-  top: 340px !important;
-  z-index: 2000;
-}
 @media only screen and (min-width: $bp-tablet){
   .tablets-swiper{
     display: none;
   }
 }
 
-
 @media only screen and (max-width: $bp-tablet) {
   .homeslider__left, .swiper-button-prev, .swiper-button-next {
     display: none;
   }
-  .swiper-wraper-text {
-    font-size: 4rem !important;
-    &:after {
-      width: 39rem !important;
-    }
-  }
-
   .tablets-swiper{
     font-size: 4rem;
     position: absolute;
@@ -134,17 +130,10 @@
     bottom: 50%;
     text-align: center;
     padding-top:0.7rem;
-    -moz-animation: 2s slide-to-right infinite;
-    -webkit-animation: 2s slide-to-right infinite;
-    animation: 2s slide-to-right infinite;
+    -moz-animation:  slide-to-right 2s infinite;
+    -webkit-animation:slide-to-right 2s infinite;
+    animation: slide-to-right 2s infinite;
   }
 }
-  @media only screen and (max-width: $bp-mobile){
-    .swiper-wraper-text{
-      font-size: 3.5rem !important;
-      &:after{
-        width: 34rem !important;
-      }
-    }
-  }
+
 

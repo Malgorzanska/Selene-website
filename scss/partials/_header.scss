@@ -5,7 +5,14 @@
   height: 9.8rem;
   width: 100%;
   @include flexForAll();
-  border-bottom: 0.5px solid $accentColor;
+  border-bottom: 0.05rem solid $accentColor;
+
+    @media only screen and (min-width: $bp-mobile) and (max-width: $bp-phablet ){
+      margin-right: 2rem;
+
+    } @media only screen and (max-width: $bp-mobile) {
+        position: relative;
+      }
   .header__logo {
     width: 38.4rem;
     @include flexForAll();
@@ -23,7 +30,7 @@
           z-index: 10;
         }
         &:before {
-          @include pseudoelement(3px solid $accentColor);
+          @include pseudoelement(0.3rem solid $accentColor);
           width: 3.5rem;
           height: 3.5rem;
           left: -2rem;
@@ -44,16 +51,58 @@
     @include flexForAll();
     align-items: center;
     margin-right: 30%;
+
+      @media only screen and (min-width: $bp-mobile) and (max-width: $bp-phablet ){
+        width: 70%;
+      }
     .nav__menu {
+      width: 100%;
       font-weight: 700;
       @include flexForAll();
       align-items: center;
-      margin-right: 5rem;
+
+      @media only screen and (min-width: $bp-desktop){
+        justify-content: center;
+        margin-left: 30%;
+
+      } @media only screen and (max-width: $bp-mobile) {
+        display: none;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        left: -0.1rem;
+        top: 9.8rem;
+        z-index: 20000 ;
+        background-color: #fff;
+        margin-right: 5rem;
+        transition: All 1s ease;
+        -webkit-transition:All 1s ease;
+        -moz-transition:All 1s ease;
+        -o-transition:All 1s ease;
+      }
       .menu__link {
         text-decoration: none;
         color: black;
-        font-size: 1.1rem;
-        padding-right: 3rem ;
+        font-size: 1.4rem;
+        margin-right: 2rem;
+
+        @media only screen and (min-width: $bp-desktop){
+          font-size: 2rem;
+        }
+        @media only screen and (min-width: $bp-mobile) and (max-width: $bp-tablet  ){
+          font-size: 1.3rem;
+          &:first-child{
+            margin-left: 3rem;
+          }
+        }
+        @media only screen and (max-width: $bp-mobile) {
+            display: none ;
+            border-bottom: 0.01rem solid $accentColor;
+            font-size: 3rem ;
+            margin: 0;
+            padding: 1.5rem 5rem;
+            width: 100%;
+        }
       }
     }
   }
@@ -65,109 +114,54 @@
   display: none;
   padding-left: 120%;
   width: 2.6rem;
+    @media only screen and (max-width: $bp-mobile) {
+      display: block;
+      cursor: pointer;
+    }
 }
 #toggle {
   display: none;
 }
 
-//hover effect on nav
+//hover effect on the navigation
 @media only screen and (min-width: $bp-portrait) {
-  .nav__menu{
+  .menu__link{
     position: relative;
-    .menu__link {
-      padding-right: 4rem ;
-      &:nth-of-type(1):hover ~ .underbar{
-        width: 33px;
-      }
-      &:nth-of-type(2):hover ~ .underbar{
-        width: 47px;
-        left: 60px;
-      }
-      &:nth-of-type(3):hover ~ .underbar{
-        width: 45px;
-        left: 136px;
-      }
-      &:nth-of-type(4):hover ~ .underbar{
-        left: 209px;
-        width: 37px;
-      }
-      &:nth-of-type(5):hover ~ .underbar{
-        left: 275px;
-        width: 42px;
-      }
-      &:nth-of-type(6):hover ~ .underbar{
-        left: 345px;
-        width: 27px;
-      }
-    }
-    .underbar{
-      width: 0;
-      height: 5px;
-      background: $accentColor;
-      top: 20px;
+    &:before{
+      content:"";
       position: absolute;
-      -moz-transition: 0.5s ease;
-      -webkit-transition: 0.5s ease;
-      transition:  0.5s ease;;
+      width: 100%;
+      height: 0.5rem;
+      bottom: -1rem;
+      left:0;
+      background-color: $accentColor;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+    }
+    &:hover{
+      &:before{
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
     }
   }
 }
 
 //mobile
 @media only screen and (max-width: $bp-mobile) {
-  .header{
-    width: 100%;
-    position: relative;
-  }
-  .hamburger__icon{
+  #toggle:checked + .nav__menu {
     display: block;
-    cursor: pointer;
-  }
-  .nav__menu{
-    display: none;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    left: -0.1rem;
-    top: 9.8rem;
-    z-index: 20000 ;
-    background-color: #fff;
-    margin-right: 5rem;
-    transition: All 1s ease;
-    -webkit-transition:All 1s ease;
-    -moz-transition:All 1s ease;
-    -o-transition:All 1s ease;
-  } .menu__link, a.menu-item{
-    display: none ;
-    border-bottom: 1px solid #f2f2f2;
-    font-size: 3rem !important ;
-    margin: 0;
-    padding: 1.5rem 5rem;
-    width: 100%;
-  } #toggle:checked + .nav__menu {
-    display: block;
-    -moz-animation: 1s slide-down ease-in;
-    -webkit-animation: 1s slide-down ease-in;
-    animation: 1s slide-down ease-in;
-    .menu__link{
+    -moz-animation: 0.5s slide-down  ease-in;
+    -webkit-animation: 0.5s slide-down ease-in;
+    animation: 0.5s slide-down  ease-in;
+    .menu__link {
       display: block;
     }
   }
 }
 
-@media only screen and (min-width: $bp-mobile) and (max-width: $bp-phablet ){
-  .header{
-    width: 100% ;
-    margin-right: 2rem;
-  }
-  .header__nav{
-    width: 70% !important;
-    .menu__link:first-child{
-      padding-left: 2rem;
-    }
-    .menu__link{
-      width: 16.6%;
-    }
-  }
-}
 

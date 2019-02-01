@@ -1,9 +1,27 @@
+@import "../modules/variables";
+@import "../modules/all";
+
+
+
 html {
   font-size: 10px;
   min-width: 390px !important;
   scroll-behavior: smooth;
 }
+//
+//#header{
+//  @media (min-width: $bp-desktop-wide) {
+//    font-size: 15px !important;
+//  }
+//}
 
 .container{
   width: 100%;
+}
+
+$wrapper-width: 192rem;
+
+.wrapper{
+  max-width: $wrapper-width;
+  margin: 0 auto;
 }

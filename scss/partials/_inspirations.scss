@@ -5,37 +5,68 @@
   width: 100%;
   height: 80vh;
   @include flexForAll();
-
   @each $number in 1, 2, 3, 4 {
     .insp#{$number} {
       background-image: url('../images/insp#{$number}.png');
-      //transition: all .2s ease-in-out;
-      //-webkit-filter: blur(2px);
-      //&:hover {
-      //  -webkit-filter: blur(0px);
       }
     }
+  @media only screen and (min-width: $bp-desktop){
+    max-height: 100rem;
+  }
+  @media only screen and (max-width: $bp-portrait) {
+    flex-wrap: wrap;
+    height: 100%;
+  }
 
   .text__slide--down{
-    -webkit-animation: 3s slide-down forwards;
-    animation: 3s slide-down forwards;
+    -webkit-animation: slide-down 3s forwards;
+    animation: slide-down 3s forwards;
   }
   .inspirations__foto {
     width: 25%;
     @include bgSizeForAll(cover);
     @include centerFlex();
-      .inspiration__foto-text {
+    @media only screen and (min-width: 600px) and (max-width: $bp-portrait){
+      width: 50%;
+      height: 50vh;
+    }
+    @media only screen and (max-width: 600px){
+      width: 100%;
+      height: 50vh;
+    }
+
+    .inspiration__foto-text {
         color: white;
         font-size: 4rem;
         font-weight: bold;
+
+        @media only screen and (min-width: $bp-desktop){
+          font-size: 5.7rem;
+        }
       }
     &:hover {
       &:after {
         @include pseudoelement(1rem solid $mainColor);
         width: 20%;
         height: 70%;
+        max-height: 90rem;
         z-index: 2;
         cursor:pointer;
+
+        @media only screen and (min-width: $bp-desktop-wide){
+          max-width: 40rem;
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: $bp-portrait){
+          width: 45%;
+          height: 45%;
+        }
+        @media only screen and (max-width: 600px){
+          height: 45%;
+          max-width: unset;
+          width:90%;
+          min-width:30rem;
+        }
       }
     }
     .toggle-text{
@@ -44,55 +75,23 @@
       font-size: 1.5rem;
       text-align: center;
       padding: 1rem 4.5rem;
-    }
-  }
-}
+      -webkit-animation: slide-down 1.3s forwards;
+      animation: slide-down 1.3s forwards;
 
-
-@media only screen and (min-width: $bp-mobile) and (max-width: $bp-portrait) {
-  .inspirations{
-    flex-wrap: wrap;
-    height: 100%;
-    .inspirations__foto{
-      width: 50%;
-      height: 50vh;
-      &:hover {
-        &:after {
-          width: 45%;
-          height: 45%;
-        }
+      @media only screen and (min-width: $bp-desktop){
+        font-size: 2.1rem;
+        padding: 4rem 7rem;
+      }
+      @media only screen and (min-width: $bp-portrait) and (max-width: $bp-desktop){
+        font-size: 1.5rem;
+      }
+      @media only screen and (max-width: $bp-portrait){
+        font-size: 1.4rem;
+        padding: 5rem 5.5rem;
       }
     }
   }
 }
-
-@media only screen and (max-width: $bp-mobile) {
-  .inspirations{
-    flex-wrap: wrap;
-    height: 100%;
-    .inspirations__foto{
-      width: 100%;
-      height: 50vh;
-      &:hover {
-        &:after {
-          width: 90%;
-          height: 45%;
-        }
-      }
-    }
-  }
-}
-
-.show-text{
-  display: block ;
-  color: white ;
-  font-size: 1.5rem;
-  padding: 15%;
-  text-align: center;
-  -webkit-animation: 3s slide-down forwards;
-  animation: 3s slide-down forwards;
-}
-
 .none{
   display: none;
 }

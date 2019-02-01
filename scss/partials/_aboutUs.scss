@@ -4,7 +4,9 @@
 .aboutus{
   height: 70vh;
   width: 100%;
+  max-height: 70rem;
   @include flexForAll();
+
   .aboutus__text{
     @include flexForAll();
     flex-direction: column;
@@ -13,14 +15,31 @@
     height: 100%;
     padding: 10%;
     color: $aboutusTextColor;
+
+    @media only screen and (min-width: $bp-desktop){
+      padding: 8%;
+    }
     .text__title{
       font-size: 4rem;
       padding-bottom: 4rem;
+      @media only screen and (min-width: $bp-desktop){
+        font-size: 5rem;
+      }
+      @media only screen and (max-width: $bp-tablet){
+        font-size: 3rem;
+      }
     }
     .text__description{
-      font-size: 1rem;
+      font-size: 1.3rem;
       line-height: 3rem;
       text-align: justify;
+      @media only screen and (min-width: $bp-desktop){
+        font-size: 2rem;
+        line-height: 4rem;
+      }
+      @media only screen and (max-width: $bp-tablet){
+        font-size: 1.3rem;
+      }
     }
   }
   .aboutus__img{
@@ -29,6 +48,9 @@
     @include flexForAll();
     align-items: center;
     justify-content: flex-end;
+    @media only screen and (min-width: $bp-desktop){
+      justify-content: center;
+    }
     .aboutus__building{
       background: url("../images/5.png") no-repeat;
       @include bgSizeForAll(cover);
@@ -39,11 +61,20 @@
       position:relative;
       @include flexForAll();
       align-items: center;
+      @media only screen and (min-width: $bp-desktop){
+        width: 48rem;
+        height: 33rem;
+        border: 10px solid $mainColor;
+      }
       .img__title{
         font-size: 6rem;
         position: absolute;
         left: -12rem;
         font-weight: bold;
+        @media only screen and (max-width: $bp-tablet){
+            font-size: 4rem ;
+            left: 2rem;
+        }
         .smaller__text{
           font-size: 5rem;
         }
@@ -53,27 +84,18 @@
 }
 
 .text__slide--right{
-  -moz-animation: 3s slide-to-right forwards;
-  -webkit-animation: 3s slide-to-right forwards;
-  animation: 3s slide-to-right forwards;
+  -moz-animation: slide-to-right 1s forwards;
+  -webkit-animation:slide-to-right  1s forwards;
+  animation: slide-to-right 1s forwards;
 }
 .text__slide--left{
-  -moz-animation: 4s slide-to-left forwards;
-  -webkit-animation: 4s slide-to-left forwards;
-  animation: 4s slide-to-left forwards;
+  -moz-animation:slide-to-left 1s forwards;
+  -webkit-animation: slide-to-left 1s forwards;
+  animation: slide-to-left 1s forwards;
 }
 
-@media only screen and (max-width: $bp-tablet){
-  .img__title{
-    font-size: 4rem !important;
-    left: 5rem !important;
-  }
-  .text__title{
-    font-size: 2.7rem !important;
-  }
-}
 
-@media only screen and (max-width: $bp-phablet) {
+@media only screen and (max-width: $bp-portrait) {
   .aboutus {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -91,13 +113,13 @@
       -webkit-align-items: flex-start;
       align-items: flex-start;
       border-right: 10px solid $mainColor;;
-      .aboutus__building{
+      .aboutus__building {
         width: 100%;
-        .img__title{
+        .img__title {
           font-size: 4rem;
           position: absolute;
           left: 10rem;
-          .smaller__text{
+          .smaller__text {
             font-size: 3rem;
           }
         }
@@ -105,3 +127,4 @@
     }
   }
 }
+
