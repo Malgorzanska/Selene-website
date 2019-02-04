@@ -153,6 +153,8 @@
       &:hover{
         transform: scale(1.3);
         color: $mainColor;
+        -moz-transition: transform .3s ease-in;
+        -webkit-transition: transform .3s ease-in;;
         transition: transform .3s ease-in;
       }
     }

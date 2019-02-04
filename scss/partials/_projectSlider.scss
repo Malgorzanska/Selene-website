@@ -3,11 +3,18 @@
 
 .project_slider {
   width: 100%;
-  height: 100vh;
+  margin-bottom: 3rem;
   @include flexForAll();
+  @media only screen and (max-width:$bp-portrait){
+    flex-wrap: wrap;
+  }
   .slider__container {
     width: 50%;
     height: 100%;
+    @media only screen and (max-width:$bp-portrait){
+      width: 100%;
+      height: 35% ;
+    }
     .item {
       .clearfix {
         max-width: 100%;
@@ -17,23 +24,24 @@
             list-style: none outside none;
             padding-left: 0;
             margin: 0;
-            height: 30%;
+            height: unset !important;
             .gallery-item {
               height: 100%;
               .gallery-img {
                 max-width: 100%;
               }
             }
-
           }
-
         }
-
       }
     }
   }
   .project__description {
     width: 50%;
+    @media only screen and (max-width:$bp-portrait){
+      width: 100%;
+      height: 40%;
+    }
     .description__wrapper {
       height: 100%;
       @include flexForAll();
@@ -42,13 +50,26 @@
       .description__wrapper--header {
         font-size: 3rem;
         font-weight: 900;
+        @media only screen and (min-width: $bp-desktop) {
+          font-size: 4rem;
+        }
+        @media only screen and (max-width:$bp-portrait){
+          font-size: 2.8rem;
+        }
       }
         .description__wrapper--content {
-          font-size: 1rem;
+          font-size: 1.3rem;
           color: #a2a6ad;
           padding: 6% 0;
           line-height: 3rem;
           text-align: justify;
+          @media only screen and (min-width: $bp-desktop) {
+            font-size: 1.8rem;
+          }
+          @media only screen and (max-width:$bp-portrait){
+            line-height: 2rem;
+            font-size: 1.5rem;
+          }
         }
         .btn {
           width:30%; ;
@@ -59,6 +80,9 @@
           line-height: 3rem;
           border: 0.5px solid #a2a6ad;
           cursor: pointer;
+          @media only screen and (min-width: $bp-desktop) {
+            font-size: 1.6rem;
+          }
           &:hover{
             -webkit-box-shadow: 0 0 20px 0 rgba(76,139,173,0.65);
             -moz-box-shadow: 0 0 20px 0 rgba(76,139,173,0.65);
@@ -69,58 +93,12 @@
 
           }
         }
-
       .hide-span{
         display: none;
       }
-
       .show-more {
         display: block;
       }
       }
     }
   }
-
-@media only screen and (min-width: $bp-portrait) and (max-width: $bp-desktop){
-  #image-gallery{
-    height: unset !important;
-    margin-top: 5% !important;
-  }
- }
-@media only screen and (min-width: $bp-phablet) and (max-width: $bp-tablet) {
-  .project_slider {
-    height: 90vh;
-  }
-  #image-gallery{
-    height: unset !important;
-    margin-top: 7% !important;
-  }
-}
-
-@media only screen and (max-width:$bp-phablet){
-  .project_slider {
-    flex-wrap: wrap;
-    height: 160vh;
-
-    .slider__container {
-      width: 100%;
-      height: 35% ;
-      #image-gallery{
-        height: 350px !important;
-      }
-
-    }
-    .project__description{
-      width: 100%;
-      height: 40%;
-      .description__wrapper--header{
-        font-size: 2.8rem !important;
-      }
-      .description__wrapper--content{
-        line-height: 2rem !important;
-        font-size: 1.5rem !important;
-      }
-    }
-  }
-}
-
