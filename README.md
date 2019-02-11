@@ -7,4 +7,5 @@ SASS  <br />
 GULP  <br />
 JQUERY  <br />
 
-To see the results click here :
+To see the results click here : <br />
+https://malgorzanska.github.io/Selene-website/
