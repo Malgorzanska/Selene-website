@@ -20,7 +20,7 @@
     font-weight: bold;
     position: relative;
     font-size: 1.5rem;
-    height: 25%;
+    height: 100%;
     padding: 5rem;
     @media only screen and (min-width: $bp-desktop) {
       font-size: 2.4rem;
@@ -151,7 +151,7 @@
     }
     .pseudonumber-one, .pseudonumber-two, .pseudonumber-three {
       &:hover{
-        transform: scale(1.3);
+        transform: scale(1.2);
         color: $mainColor;
         -moz-transition: transform .3s ease-in;
         -webkit-transition: transform .3s ease-in;;

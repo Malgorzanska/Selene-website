@@ -98,6 +98,7 @@
       }
       .show-more {
         display: block;
+        -webkit-animation: fade-in 1s ease-out;
       }
       }
     }

@@ -22,6 +22,7 @@
     .text__title{
       font-size: 4rem;
       padding-bottom: 4rem;
+      opacity:0;
       @media only screen and (min-width: $bp-desktop){
         font-size: 5rem;
       }
@@ -33,6 +34,7 @@
       font-size: 1.3rem;
       line-height: 3rem;
       text-align: justify;
+      opacity:0;
       @media only screen and (min-width: $bp-desktop){
         font-size: 2rem;
         line-height: 4rem;
@@ -61,6 +63,7 @@
       position:relative;
       @include flexForAll();
       align-items: center;
+      opacity:0;
       @media only screen and (min-width: $bp-desktop){
         width: 48rem;
         height: 33rem;
@@ -71,11 +74,13 @@
         position: absolute;
         left: -12rem;
         font-weight: bold;
+        opacity:0;
         @media only screen and (max-width: $bp-tablet){
             font-size: 4rem ;
             left: 2rem;
         }
         .smaller__text{
+          opacity:0;
           font-size: 5rem;
         }
       }

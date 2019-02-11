@@ -95,3 +95,21 @@
 .none{
   display: none;
 }
+.arrow-to-top{
+  display: none;
+}
+
+.show-arrow{
+  display:block;
+  position:fixed;
+  opacity: 0;
+  font-size: 4rem;
+  bottom: 30px;
+  right: 20px;
+  z-index: 2000000;
+  cursor: pointer;
+  color: grey;
+  -moz-animation:  slide-up 1s infinite;
+  -webkit-animation:slide-up 1s infinite;
+  animation: slide-up 1s infinite;
+}

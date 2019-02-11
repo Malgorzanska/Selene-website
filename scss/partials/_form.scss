@@ -2,15 +2,21 @@
 @import "../modules/variables";
 
 
-.form {
+.form__box {
   width: 100%;
   height: 100vh;
+  @media only screen and (max-width: $bp-tablet){
+    max-height: 80rem;
+  }
+
   .contact {
     width: 81%;
     height: 100%;
-    margin: 0 auto;
     @include flexForAll();
     position:relative;
+    @media only screen and (max-width: $bp-phablet){
+      width: 90%;
+    }
     &:after {
       @include pseudoelement(12px solid $mainColor);
       height: 90%;
@@ -18,6 +24,13 @@
       top: 5%;
       left: 7%;
       z-index: 3;
+
+      @media only screen and (max-width: $bp-phablet){
+        width: 95%;
+        height: 95%;
+        top: 3%;
+        left: 2%;
+      }
     }
     .form__container{
       width: 60%;
@@ -25,9 +38,17 @@
       position: relative;
       z-index: 20000;
       padding: 9% 5% 0 13%;
+      @include flexForAll();
+      flex-direction: column;
+      @media only screen and (max-width: $bp-phablet){
+        width: 90%;
+      }
 
       .form__nav{
           padding-bottom: 15%;
+        @media only screen and (max-width: $bp-phablet){
+          padding-top: 10%;
+        }
         .nav-item{
           display: -moz-inline-block;
           display: inline-block;
@@ -44,16 +65,16 @@
       }
 
       .phone-info, .email-info{
-        height: 100%;
+        height: 80%;
         width: 100%;
+        padding-top:50%;
+
         text-align: center;
-        padding-top: 5%;
         display: none;
         font-weight: 700;
         font-size: 3rem;
         color: #bcc0cd;
         .phone-info-text, .email-info-text {
-          margin: 7% 15%;
           display: block;
           color: $mainColor;
         }
@@ -64,16 +85,16 @@
       }
 
       .form{
-        height: 100%;
+        height: 80%;
         display: none;
         .input, .textarea {
           padding-bottom: 1.5%;
           border: none;
-          border-bottom: 0.5px solid $accentColor !important;
+          border-bottom: 0.5px solid $accentColor;
           width: 100%;
           margin-bottom: 5%;
           resize: none;
-          &:active, &:focus, &:visited{
+          &:active{
             background-color: #fff;
           }
         }
@@ -88,11 +109,12 @@
           margin-left:36%;
         }
 
-        }
+      }
         .input{
           font-weight: 700;
           font-size: 2.5rem;
           color: #bcc0cd;
+          height: 7%;
           &::placeholder{
             font-size: 2.5rem;
             color: #bcc0cd;
@@ -102,16 +124,15 @@
           }
         }
         .textarea{
-          height: 10rem;
+          height: 25%;
           font-size: 1rem;
           color: #bcc0cd;
           &::placeholder{
             color: #bcc0cd;
           }
         }
-
           .show-div{
-           display:block !important;
+           display:block;
         }
       }
 
@@ -122,29 +143,16 @@
       position: relative;
       background-image: url("../images/contactus.png");
       @include bgSizeForAll(cover);
-    }
-  }
-
-
-@media only screen and (max-width: $bp-phablet){
-    #make-wider{
-      width: 90%;
-      &:after{
-        width: 95% !important;
-        height: 95% !important;
-        top: 3%;
-        left: 2%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      @media only screen and (max-width: $bp-phablet){
+        display: none;
       }
     }
-}
-@media only screen and (max-width: $bp-mobile){
-  .form__img{
-    display: none;
   }
-  .form__container{
-    width: 90% !important;
-    .form__nav{
-      padding-top: 10%;
-    }
-  }
+
+.error {
+  color: $errorColor;
+  text-align: center;
+  padding: 0.3rem 0;
 }
